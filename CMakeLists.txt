@@ -40,7 +40,7 @@ endif()
 # set(COOL_USE_VULKAN 110)
 set(COOL_USE_OPENGL $<IF:$<PLATFORM_ID:Darwin>,410,430>) # Must be >= 330 for ImGui to work properly # We use 410 when building on Mac because it doesn't support higher versions of OpenGL
 set(COOL_USE_MACOS_BUNDLE ON)
-set(COOL_APP_NAME "Coollab")
+set(COOL_APP_NAME "Coollab" CACHE STRING "Name of the app, also used as the name of the user-data folder")
 add_subdirectory(Cool)
 target_link_libraries(Coollab-Properties INTERFACE Cool::Core)
 cool_setup(${PROJECT_NAME})
