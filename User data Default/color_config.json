@@ -9,7 +9,7 @@
      "Opacity": 1.0
     },
     {
-     "Brightness delta": 0.10499999672174454,
+     "Brightness delta": 0.045,
      "Name": "Brighter",
      "Opacity": 1.0
     },
@@ -30,7 +30,7 @@
      "Opacity": 1.0
     },
     {
-     "Brightness delta": -0.25,
+     "Brightness delta": -0.02,
      "Name": "Darker",
      "Opacity": 1.0
     },
@@ -121,6 +121,16 @@
      "Brightness delta": 0.0,
      "Name": "Floating Buttons Enabled",
      "Opacity": 0.3019999861717224
+    },
+    {
+     "Brightness delta": 0.0,
+     "Name": "Subtle",
+     "Opacity": 0.28
+    },
+    {
+     "Brightness delta": 0.0,
+     "Name": "Soft",
+     "Opacity": 0.45
     }
    ],
    "Name": "Accent"
@@ -250,11 +260,11 @@
   },
   "FrameBgActive": {
    "Category": "Medium",
-   "Group": "Darker"
+   "Group": "Brighter"
   },
   "FrameBgHovered": {
    "Category": "Medium",
-   "Group": "Darker"
+   "Group": "Brighter"
   },
   "GradientMark": {
    "Category": "Bright",
@@ -273,16 +283,16 @@
    "Group": "Brighter"
   },
   "Header": {
-   "Category": "Bright",
-   "Group": "Normal"
+   "Category": "Accent",
+   "Group": "Subtle"
   },
   "HeaderActive": {
    "Category": "Accent",
-   "Group": "Normal"
+   "Group": "Slightly Transparent"
   },
   "HeaderHovered": {
-   "Category": "Bright",
-   "Group": "Brighter"
+   "Category": "Accent",
+   "Group": "Soft"
   },
   "HighlightItems": {
    "Category": "Accent",
@@ -293,7 +303,7 @@
    "Group": "Normal"
   },
   "MenuBarBg": {
-   "Category": "Bright",
+   "Category": "Background",
    "Group": "Normal"
   },
   "ModalWindowDimBg": {
@@ -321,7 +331,7 @@
    "Group": "Normal"
   },
   "Nodes_Bg": {
-   "Category": "Medium",
+   "Category": "Background",
    "Group": "Normal"
   },
   "Nodes_Flow": {
@@ -333,7 +343,7 @@
    "Group": "Invisible"
   },
   "Nodes_Grid": {
-   "Category": "Bright",
+   "Category": "Medium",
    "Group": "Normal"
   },
   "Nodes_GroupBg": {
@@ -365,12 +375,12 @@
    "Group": "Invisible"
   },
   "Nodes_NodeBg": {
-   "Category": "Background",
+   "Category": "Medium",
    "Group": "Normal"
   },
   "Nodes_NodeBorder": {
-   "Category": "Background",
-   "Group": "Invisible"
+   "Category": "Bright",
+   "Group": "Normal"
   },
   "Nodes_NodeSelRect": {
    "Category": "Accent",
@@ -429,8 +439,8 @@
    "Group": "Normal"
   },
   "ScrollbarBg": {
-   "Category": "Medium",
-   "Group": "Normal"
+   "Category": "Background",
+   "Group": "Invisible"
   },
   "ScrollbarGrab": {
    "Category": "Bright",
@@ -469,15 +479,15 @@
    "Group": "Brighter"
   },
   "Tab": {
-   "Category": "Medium",
+   "Category": "Background",
    "Group": "Normal"
   },
   "TabDimmed": {
-   "Category": "Medium",
+   "Category": "Background",
    "Group": "Normal"
   },
   "TabDimmedSelected": {
-   "Category": "Bright",
+   "Category": "Medium",
    "Group": "Normal"
   },
   "TabDimmedSelectedOverline": {
@@ -485,11 +495,11 @@
    "Group": "Normal"
   },
   "TabHovered": {
-   "Category": "Bright",
+   "Category": "Medium",
    "Group": "Brighter"
   },
   "TabSelected": {
-   "Category": "Bright",
+   "Category": "Medium",
    "Group": "Normal"
   },
   "TabSelectedOverline": {
@@ -497,11 +507,11 @@
    "Group": "Brighter"
   },
   "TableBorderLight": {
-   "Category": "Background",
-   "Group": "Normal"
+   "Category": "Bright",
+   "Group": "Transparent"
   },
   "TableBorderStrong": {
-   "Category": "Background",
+   "Category": "Bright",
    "Group": "Normal"
   },
   "TableHeaderBg": {
@@ -509,12 +519,12 @@
    "Group": "Normal"
   },
   "TableRowBg": {
-   "Category": "Bright",
-   "Group": "Normal"
+   "Category": "Background",
+   "Group": "Invisible"
   },
   "TableRowBgAlt": {
    "Category": "Medium",
-   "Group": "Normal"
+   "Group": "Transparent"
   },
   "Text": {
    "Category": "Text",
@@ -533,15 +543,15 @@
    "Group": "Normal"
   },
   "TitleBg": {
-   "Category": "Medium",
+   "Category": "Background",
    "Group": "Normal"
   },
   "TitleBgActive": {
-   "Category": "Medium",
+   "Category": "Background",
    "Group": "Normal"
   },
   "TitleBgCollapsed": {
-   "Category": "Medium",
+   "Category": "Background",
    "Group": "Normal"
   },
   "Toggle": {
@@ -549,12 +559,12 @@
    "Group": "Normal"
   },
   "ToggleBg": {
-   "Category": "Medium",
+   "Category": "Bright",
    "Group": "Normal"
   },
   "ToggleBgHovered": {
-   "Category": "Medium",
-   "Group": "Darker"
+   "Category": "Bright",
+   "Group": "Brighter"
   },
   "ToggleHovered": {
    "Category": "Accent",

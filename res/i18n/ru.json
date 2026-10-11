@@ -1339,6 +1339,8 @@
         "Color Theme": "Цветовая тема",
         "Color Themes": "Цветовые темы",
         "Commands": "Команды",
+        "Compatible with the input: {} nodes": "Совместимые со входом: {} нод",
+        "Compatible with the output: {} nodes": "Совместимые с выходом: {} нод",
         "Compile all is0 Nodes": "Скомпилировать все ноды is0",
         "Compile everything": "Скомпилировать всё",
         "Completed": "Готово",

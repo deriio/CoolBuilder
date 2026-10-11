@@ -77,6 +77,8 @@ ui_menu = {
     "By task": "По задаче",
     "With conversion": "С преобразованием типа",
     "No node found": "Ничего не найдено",
+    "Compatible with the output: {} nodes": "Совместимые с выходом: {} нод",
+    "Compatible with the input: {} nodes": "Совместимые со входом: {} нод",
     "Show all nodes": "Показать все ноды",
     "By default, only the nodes that can be plugged into the link you are dragging are shown.": "По умолчанию показаны только ноды, которые можно подключить к перетаскиваемой связи.",
     "Name or task": "Название или задача",
