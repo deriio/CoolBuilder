@@ -1,4 +1,5 @@
 #include "Task_PublishImageToGallery.hpp"
+#include "Cool/i18n/i18n.hpp"
 #include <tl/expected.hpp>
 #include "Cool/ImGui/markdown.h"
 #include "Cool/String/String.h"
@@ -124,7 +125,7 @@ auto Task_PublishImageToGallery::notification_after_execution_completes() const 
             .type                 = ImGuiNotify::Type::Success,
             .title                = name(),
             .custom_imgui_content = [](auto&&) {
-                Cool::ImGuiExtras::markdown("You can now see your image online at [https://coollab-art.com/Gallery](https://coollab-art.com/Gallery)");
+                Cool::ImGuiExtras::markdown(Cool::tr("You can now see your image online at [https://coollab-art.com/Gallery](https://coollab-art.com/Gallery)"));
             },
         };
     }

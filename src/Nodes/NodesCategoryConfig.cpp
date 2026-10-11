@@ -1,4 +1,5 @@
 #include "NodesCategoryConfig.h"
+#include "Cool/i18n/i18n.hpp"
 #include <filesystem>
 #include <smart/smart.hpp>
 #include "Cool/File/File.h"
@@ -31,7 +32,7 @@ auto NodesCategoryConfig::imgui_popup() -> bool
     if (ImGui::BeginPopupContextItem())
     {
         b |= imgui_node_kind_dropdown("Nodes kind", &_nodes_kind);
-        b |= ImGui::InputInt("Number of main input pins", &_number_of_main_input_pins);
+        b |= ImGui::InputInt(Cool::i18n::label("Number of main input pins").c_str(), &_number_of_main_input_pins);
         _number_of_main_input_pins = smart::keep_above(0, _number_of_main_input_pins);
         ImGui::EndPopup();
     }

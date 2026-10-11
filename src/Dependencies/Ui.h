@@ -1,4 +1,5 @@
 #pragma once
+#include "Cool/i18n/i18n.hpp"
 #include <Cool/Dependencies/AnySharedVariable.h>
 #include <Cool/ImGui/ImGuiExtras.h>
 #include "CommandCore/CommandExecutor.h"
@@ -22,7 +23,7 @@ public:
     template<typename UiFunction>
     static void window(const WindowParams& params, UiFunction&& ui_function)
     {
-        ImGui::Begin(params.name.data(), nullptr, ImGuiWindowFlags_NoFocusOnAppearing);
+        ImGui::Begin(Cool::i18n::window_title(std::string{params.name}).c_str(), nullptr, ImGuiWindowFlags_NoFocusOnAppearing);
         ui_function();
         ImGui::End();
     }

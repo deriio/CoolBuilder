@@ -1,6 +1,7 @@
 [submodule "Cool"]
 	path = Cool
-	url = https://github.com/CoolLibs/Cool
+	url = https://github.com/deriio/Cool
+	branch = claude/vigilant-meitner-lddo5h
 [submodule "lib/cmd"]
 	path = lib/cmd
 	url = https://github.com/CoolLibs/cmd

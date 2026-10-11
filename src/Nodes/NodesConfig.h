@@ -61,6 +61,7 @@ public:
     void update_node_with_new_definition(Cool::Node&, Cool::NodeDefinition const&);
     void update_node_with_new_definition(Node&, Cool::NodeDefinition const&, bool store_links_deletion_in_history = false);
     auto maybe_disable_node_definition() const -> Cool::MaybeDisableNodeDefinition;
+    auto check_node_compatibility(Cool::Pin const&) const -> Cool::CheckNodeCompatibility;
 
 private:
     auto make_node(Cool::NodeDefinitionAndCategoryName const&) -> Node;

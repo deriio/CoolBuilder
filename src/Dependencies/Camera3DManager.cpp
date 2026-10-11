@@ -1,4 +1,5 @@
 #include "Camera3DManager.h"
+#include "Cool/i18n/i18n.hpp"
 #include "CommandCore/CommandExecutor.h"
 #include "Commands/Command_FinishedEditingVariable.h"
 #include "Commands/Command_SetCameraZoom.h"
@@ -89,7 +90,7 @@ void Camera3DManager::imgui(CommandExecutor const& executor)
 
         glm::vec3 eulerAnglesRadians = glm::eulerAngles(rotation);
         b |= ImGui::DragFloat3("Position", glm::value_ptr(translation));
-        b |= ImGui::DragFloat3("Rotation", glm::value_ptr(eulerAnglesRadians));
+        b |= ImGui::DragFloat3(Cool::i18n::label("Rotation").c_str(), glm::value_ptr(eulerAnglesRadians));
 
         if (b)
         {
@@ -108,7 +109,7 @@ void Camera3DManager::imgui(CommandExecutor const& executor)
     });
     if (ImGui::IsItemDeactivatedAfterEdit())
         executor.execute(Command_FinishedEditingVariable{});
-    if (ImGui::Button(Cool::icon_fmt("Look at the origin", ICOMOON_RADIO_CHECKED).c_str()))
+    if (ImGui::Button(Cool::icon_fmt(Cool::tr("Look at the origin"), ICOMOON_RADIO_CHECKED).c_str()))
     {
         maybe_update_camera(executor, [&](Cool::Camera& camera) {
             _view_controller.set_orbit_center({0, 0, 0}, camera);
@@ -116,7 +117,7 @@ void Camera3DManager::imgui(CommandExecutor const& executor)
         });
         executor.execute(Command_FinishedEditingVariable{});
     }
-    if (ImGui::Button(Cool::icon_fmt("Reset Camera", ICOMOON_TARGET).c_str()))
+    if (ImGui::Button(Cool::icon_fmt(Cool::tr("Reset Camera"), ICOMOON_TARGET).c_str()))
     {
         reset_camera(executor);
     }

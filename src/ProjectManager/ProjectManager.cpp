@@ -1,4 +1,5 @@
 #include "ProjectManager.hpp"
+#include "Cool/i18n/i18n.hpp"
 #include <imgui.h>
 #include <ImGuiNotify/ImGuiNotify.hpp>
 #include <filesystem>
@@ -31,7 +32,7 @@ static auto get_argument_after(size_t& i) -> std::string const*
     {
         ImGuiNotify::send({
             .type    = ImGuiNotify::Type::Warning,
-            .title   = "Project Command-Line Arguments",
+            .title   = Cool::tr("Project Command-Line Arguments"),
             .content = fmt::format("Missing argument after \"{}\"", Cool::command_line_args().get()[i]),
         });
         return nullptr;
@@ -79,7 +80,7 @@ void ProjectManager::process_command_line_args(OnProjectLoaded const& on_project
         {
             ImGuiNotify::send({
                 .type    = ImGuiNotify::Type::Warning,
-                .title   = "Project Command-Line Arguments",
+                .title   = Cool::tr("Project Command-Line Arguments"),
                 .content = fmt::format("Unknown argument \"{}\"", arg),
             });
         }
@@ -151,7 +152,7 @@ void ProjectManager::open_project(std::filesystem::path const& file_path, OnProj
         {
             ImGuiNotify::send({
                 .type     = ImGuiNotify::Type::Error,
-                .title    = "Failed to open project",
+                .title    = Cool::tr("Failed to open project"),
                 .content  = fmt::format("We failed to save the current project, so we didn't open the new one because we would have lost the changes to the current project."),
                 .duration = std::nullopt,
             });
@@ -166,10 +167,10 @@ void ProjectManager::open_project(std::filesystem::path const& file_path, OnProj
     {
         ImGuiNotify::send({
             .type                 = ImGuiNotify::Type::Error,
-            .title                = "Failed to open project",
+            .title                = Cool::tr("Failed to open project"),
             .content              = maybe_project.error(),
             .custom_imgui_content = [file_path](auto&&) {
-                if (ImGui::Button("Try to open in file explorer"))
+                if (ImGui::Button(Cool::i18n::label("Try to open in file explorer").c_str()))
                     Cool::open_focused_in_explorer(Cool::File::weakly_canonical(file_path));
             },
             .duration = std::nullopt,
@@ -202,7 +203,7 @@ auto ProjectManager::save_project(bool must_absolutely_succeed, SetWindowTitle c
 
     ImGuiNotify::send({
         .type     = ImGuiNotify::Type::Success,
-        .title    = "Saved Project",
+        .title    = Cool::tr("Saved Project"),
         .content  = Cool::user_settings().autosave_enabled
                         ? fmt::format("NB: there is an autosave every {} seconds, so you don't really need to save the project manually", Cool::user_settings().autosave_delay.as_seconds_float())
                         : "",
@@ -348,26 +349,26 @@ auto ProjectManager::save_project_as(std::filesystem::path file_path, SaveThumbn
     {
         ImGuiNotify::send({
             .type                 = ImGuiNotify::Type::Success,
-            .title                = fmt::format("Saved as"),
+            .title                = Cool::tr("Saved as"),
             .content              = Cool::File::weakly_canonical(file_path).string(),
             .custom_imgui_content = [wants_to_switch_to_new_project, file_path, old_file_path = _impl.project_path()](ImGuiNotify::NotificationId const& this_notification_id) {
                 if (wants_to_switch_to_new_project)
                 {
-                    if (ImGui::Button(fmt::format("Switch back to \"{}\"", Cool::File::file_name_without_extension(old_file_path)).c_str()))
+                    if (ImGui::Button(fmt::format("{} \"{}\"", Cool::tr("Switch back to"), Cool::File::file_name_without_extension(old_file_path)).c_str()))
                     {
                         execute_command(Command_OpenProjectOnNextFrame{old_file_path});
                         ImGuiNotify::close_immediately(this_notification_id);
                     }
-                    Cool::ImGuiExtras::help_marker("If you always want to switch back you can make this the default behaviour by enabling \"Save As behaves as a Save Backup\" in the  " ICOMOON_COG "Settings menu");
+                    Cool::ImGuiExtras::help_marker(fmt::format("{}  " ICOMOON_COG "{}", Cool::tr("If you always want to switch back you can make this the default behaviour by enabling \"Save As behaves as a Save Backup\" in the"), Cool::tr("Settings")).c_str());
                 }
                 else
                 {
-                    if (ImGui::Button(fmt::format("Switch to \"{}\"", Cool::File::file_name_without_extension(file_path)).c_str()))
+                    if (ImGui::Button(fmt::format("{} \"{}\"", Cool::tr("Switch to"), Cool::File::file_name_without_extension(file_path)).c_str()))
                     {
                         execute_command(Command_OpenProjectOnNextFrame{file_path});
                         ImGuiNotify::close_immediately(this_notification_id);
                     }
-                    Cool::ImGuiExtras::help_marker("If you always want to switch you can make this the default behaviour by disabling \"Save As behaves as a Save Backup\" in the  " ICOMOON_COG "Settings menu");
+                    Cool::ImGuiExtras::help_marker(fmt::format("{}  " ICOMOON_COG "{}", Cool::tr("If you always want to switch you can make this the default behaviour by disabling \"Save As behaves as a Save Backup\" in the"), Cool::tr("Settings")).c_str());
                 }
             },
             .duration = 5s,
@@ -401,7 +402,7 @@ auto ProjectManager::package_project_into(std::filesystem::path const& folder_pa
     {
         ImGuiNotify::send({
             .type     = ImGuiNotify::Type::Error,
-            .title    = "Failed to package project",
+            .title    = Cool::tr("Failed to package project"),
             .content  = fmt::format("This file already exists. Please choose another one.\n{}", Cool::File::weakly_canonical(folder_path)), // TODO(Project) replace text with "this folder" once we package into a folder
             .duration = std::nullopt,
         });
@@ -437,20 +438,20 @@ auto ProjectManager::project_name_error_message(std::string const& name, NameVal
     if (!checks.allow_overwrite_existing_file)
     {
         if (Cool::File::exists(_impl.project_path(name)) && name != _impl.project_name())
-            return "Name already used by another project";
+            return Cool::tr("Name already used by another project");
     }
 
     if (name.empty())
-        return "Name cannot be empty";
+        return Cool::tr("Name cannot be empty");
 
     for (char const invalid_char : {'.', '<', '>', ':', '\"', '/', '\\', '|', '?', '*', '\0'})
     {
         if (name.find(invalid_char) != std::string::npos)
-            return fmt::format("Name cannot contain a {}", invalid_char);
+            return fmt::format("{} {}", Cool::tr("Name cannot contain the character"), invalid_char);
     }
 
     if (name.ends_with(' '))
-        return "Name cannot end with a space";
+        return Cool::tr("Name cannot end with a space");
 
     if (name.starts_with("--"))
         return "Name cannot start with --"; // Otherwise, when passing this file name as a command-line argument, we would think it's an argument and not a file name

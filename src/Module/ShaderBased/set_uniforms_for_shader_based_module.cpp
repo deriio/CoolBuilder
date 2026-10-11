@@ -1,3 +1,4 @@
+#include "Cool/i18n/i18n.hpp"
 #include "set_uniforms_for_shader_based_module.hpp"
 #include "Cool/Camera/CameraShaderU.h"
 #include "Cool/ColorSpaces/ColorAndAlphaSpace.h"
@@ -59,7 +60,7 @@ static void set_uniform(Cool::OpenGL::Shader const& shader, Cool::SharedVariable
             var.notification_id(),
             {
                 .type     = ImGuiNotify::Type::Error,
-                .title    = "Invalid node parameter",
+                .title    = Cool::tr("Invalid node parameter"),
                 .content  = fmt::format("In node \"{}\":\n{}", node_name, e.error_message().message),
                 .duration = std::nullopt,
                 .closable = false,

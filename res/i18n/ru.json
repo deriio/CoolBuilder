@@ -1,0 +1,1551 @@
+{
+    "categories": {
+        "2D Modifier": "Преобразование пространства 2D",
+        "3D Shape": "Фигура 3D",
+        "3D Shape Blend": "Объединение фигур 3D",
+        "3D Shape Modifier": "Изменение фигуры 3D",
+        "3D Shape Renderer": "Отрисовка 3D",
+        "3D Shape from 2D": "3D из фигуры 2D",
+        "Boolean operations": "Логические операции",
+        "Curve": "Кривая",
+        "Curve 3D": "Кривая 3D",
+        "Curve Blend": "Смешивание кривых",
+        "Curve Modifier": "Изменение кривой",
+        "Curve Renderer": "Отрисовка кривой",
+        "Force Field": "Силовое поле",
+        "Greyscale": "Оттенки серого",
+        "Greyscale Blend": "Смешивание оттенков серого",
+        "Greyscale Modifier": "Обработка оттенков серого",
+        "Image": "Изображение",
+        "Image Blend": "Смешивание изображений",
+        "Image Modifier (Post Process)": "Обработка изображения",
+        "Input": "Входные значения",
+        "Miscellaneous": "Разное",
+        "Particle 2D Force": "Частицы 2D: силы и движение",
+        "Particle 2D Get Attribute": "Частицы 2D: получить свойство",
+        "Particle 2D Initializer": "Частицы 2D: начальные значения",
+        "Particle 2D Set Attribute": "Частицы 2D: задать свойство",
+        "Particle 3D Force": "Частицы 3D: силы и движение",
+        "Particle 3D Get Attribute": "Частицы 3D: получить свойство",
+        "Particle 3D Initializer": "Частицы 3D: начальные значения",
+        "Particle 3D Set Attribute": "Частицы 3D: задать свойство",
+        "Shape": "Фигура 2D",
+        "Shape Blend": "Объединение фигур 2D",
+        "Shape Modifier": "Изменение фигуры 2D",
+        "Shape Renderer": "Отрисовка фигуры 2D"
+    },
+    "inputs": {
+        "2D Modifier": "Преобразование 2D",
+        "2D Shape": "Фигура 2D",
+        "3D Shape": "Фигура 3D",
+        "3D Shape 1": "Фигура 3D 1",
+        "3D Shape 2": "Фигура 3D 2",
+        "Absolute Value": "Модуль",
+        "Absorption": "Поглощение",
+        "Ambient Occlusion": "Затенение окружения (AO)",
+        "Ambient Occlusion Size": "Размер затенения окружения",
+        "Amount": "Количество",
+        "Amplitude": "Амплитуда",
+        "Amplitude Multiplier": "Множитель амплитуды",
+        "Anchor 1": "Опорная точка 1",
+        "Anchor 2": "Опорная точка 2",
+        "Angle": "Угол",
+        "Arrow Thickness": "Толщина стрелок",
+        "Background": "Фон",
+        "Background Color": "Цвет фона",
+        "Base Radius": "Базовый радиус",
+        "Bending": "Изгиб",
+        "Blur": "Размытие",
+        "Blur normals at edges": "Размыть нормали по краям",
+        "Border Color": "Цвет границы",
+        "Bottom Left": "Нижний левый",
+        "Bottom Right": "Нижний правый",
+        "Brevity": "Краткость",
+        "Brightness": "Яркость",
+        "Cartoon Edges": "Мультяшный контур",
+        "Cartoon Edges Color": "Цвет мультяшного контура",
+        "Cartoon Edges Size": "Толщина мультяшного контура",
+        "Cartoon Edges Size Growth": "Рост толщины контура",
+        "Cartoon Edges Size Power": "Степень толщины контура",
+        "Carve": "Вырезать",
+        "Cell Size": "Размер ячейки",
+        "Center": "Центр",
+        "Centered": "По центру",
+        "Channel": "Канал",
+        "Channel Name": "Имя канала",
+        "Charge 1": "Заряд 1",
+        "Charge 1 Strength": "Сила заряда 1",
+        "Charge 2": "Заряд 2",
+        "Charge 2 Strength": "Сила заряда 2",
+        "Charge 3": "Заряд 3",
+        "Charge 3 Strength": "Сила заряда 3",
+        "CircleDisplacement": "Смещение по кругу",
+        "Clamp": "Ограничить",
+        "Clamp Output Alpha": "Ограничить альфу на выходе",
+        "Color": "Цвет",
+        "Color 1": "Цвет 1",
+        "Color 2": "Цвет 2",
+        "Color Gradient": "Цветовой градиент",
+        "Color Max": "Цвет максимума",
+        "Color Min": "Цвет минимума",
+        "Color2": "Цвет 2",
+        "Condition": "Условие",
+        "Content Size": "Размер содержимого",
+        "Count": "Количество",
+        "Curve": "Кривая",
+        "Curve1": "Кривая 1",
+        "Curve2": "Кривая 2",
+        "Custom resolution": "Своё разрешение",
+        "Depth": "Глубина",
+        "Detail": "Детализация",
+        "Direction": "Направление",
+        "Displacement": "Смещение",
+        "Displacement Function": "Функция смещения",
+        "Displacement Map": "Карта смещения",
+        "Distortion Map": "Карта искажения",
+        "Distortion_intensity": "Сила искажения",
+        "Drops_size": "Размер капель",
+        "Duration of Min": "Длительность минимума",
+        "Duration of one image": "Длительность одного изображения",
+        "Edges Thickness": "Толщина рёбер",
+        "Elongation": "Вытягивание",
+        "Expr": "Формула",
+        "Extra Thickness": "Доп. толщина",
+        "Faces Count": "Число граней",
+        "Faces Roundness": "Скругление граней",
+        "Faces Sharpness": "Острота граней",
+        "Faces Size": "Размер граней",
+        "Falloff": "Затухание",
+        "Fix Shape Artifacts": "Исправить артефакты фигуры",
+        "Fix artifacts": "Исправить артефакты",
+        "Fix narrow shapes": "Исправить узкие фигуры",
+        "Flip": "Отразить",
+        "Flip direction": "Обратное направление",
+        "Flip every other tile": "Отражать каждую вторую плитку",
+        "Float": "Число",
+        "Fog (Constant)": "Туман (равномерный)",
+        "Fog (Constant) Absorption": "Туман (равномерный): поглощение",
+        "Fog (Constant) Color": "Туман (равномерный): цвет",
+        "Fog (Constant) Emission": "Туман (равномерный): свечение",
+        "Fog (Gradient)": "Туман (градиентный)",
+        "Fog (Gradient) Color": "Туман (градиентный): цвет",
+        "Fog (Gradient) Density": "Туман (градиентный): плотность",
+        "Fog (Gradient) Falloff": "Туман (градиентный): затухание",
+        "Fog (Gradient) Ground Height": "Туман (градиентный): высота земли",
+        "Fog (Gradient) Max Absorption": "Туман (градиентный): макс. поглощение",
+        "Force": "Сила",
+        "Force Field": "Силовое поле",
+        "Foreground": "Передний план",
+        "Fraction": "Доля",
+        "Frequency": "Частота",
+        "Frequency Multiplier": "Множитель частоты",
+        "Fresnel": "Френель",
+        "Fresnel Color": "Цвет Френеля",
+        "Fresnel Strength": "Сила Френеля",
+        "From Max": "Из максимума",
+        "From Min": "Из минимума",
+        "Function": "Функция",
+        "Glitch": "Глитч",
+        "Glow": "Свечение",
+        "Glow Color": "Цвет свечения",
+        "Glow Power": "Степень свечения",
+        "Glow Strength": "Сила свечения",
+        "Glow2": "Свечение 2",
+        "Glow2 Color": "Цвет свечения 2",
+        "Glow2 Falloff": "Затухание свечения 2",
+        "Glow2 Strength": "Сила свечения 2",
+        "Gradient": "Градиент",
+        "Greyscale": "Оттенки серого",
+        "Greyscale 1": "Оттенки серого 1",
+        "Greyscale 2": "Оттенки серого 2",
+        "Grid Size": "Размер сетки",
+        "Handle 1": "Маркер 1",
+        "Handle 2": "Маркер 2",
+        "Height": "Высота",
+        "Height Map": "Карта высот",
+        "Highlights": "Света",
+        "Horizontal": "По горизонтали",
+        "Hue": "Оттенок",
+        "ID 1": "Номер 1",
+        "ID 2": "Номер 2",
+        "ID 3": "Номер 3",
+        "ID 4": "Номер 4",
+        "ID 5": "Номер 5",
+        "ID 6": "Номер 6",
+        "ID 7": "Номер 7",
+        "ID 8": "Номер 8",
+        "ID 9": "Номер 9",
+        "Image": "Изображение",
+        "Image 1": "Изображение 1",
+        "Image 2": "Изображение 2",
+        "Image 3": "Изображение 3",
+        "Image 4": "Изображение 4",
+        "Image 5": "Изображение 5",
+        "Image 6": "Изображение 6",
+        "Image 7": "Изображение 7",
+        "Image 8": "Изображение 8",
+        "Image 9": "Изображение 9",
+        "Index of Refraction": "Коэффициент преломления",
+        "Initial Amplitude": "Начальная амплитуда",
+        "Input": "Вход",
+        "Intensity": "Интенсивность",
+        "Interior Distance": "Расстояние внутри",
+        "Invert": "Инвертировать",
+        "Is Increasing": "Возрастает",
+        "Is Relative": "Относительно",
+        "Iterations": "Итерации",
+        "Jittering": "Дрожание",
+        "Kind": "Вид",
+        "Lacunarity": "Лакунарность",
+        "Length": "Длина",
+        "Level of extreme": "Уровень экстремума",
+        "Levels": "Уровни",
+        "Lifetime": "Время жизни",
+        "Lifetime Max": "Макс. время жизни",
+        "Lifetime Min": "Мин. время жизни",
+        "Light attenuation": "Ослабление света",
+        "Light intensity": "Сила света",
+        "Lightness": "Светлота",
+        "Lines": "Линии",
+        "Mask": "Маска",
+        "Matrix": "Матрица",
+        "Max": "Максимум",
+        "Max Speed": "Макс. скорость",
+        "Max Value": "Макс. значение",
+        "Max number of steps": "Макс. число шагов",
+        "Max steps": "Макс. шагов",
+        "Max subdivisions": "Макс. делений",
+        "Metric": "Метрика",
+        "Midtones": "Средние тона",
+        "Min": "Минимум",
+        "Min Value": "Мин. значение",
+        "Mirror": "Зеркало",
+        "Mode": "Режим",
+        "Nb of Branches": "Число ветвей",
+        "Noise": "Шум",
+        "Noise 3D": "Шум 3D",
+        "Normalize": "Нормализовать",
+        "Normals": "Нормали",
+        "Normals Strength": "Сила нормалей",
+        "Number 1": "Число 1",
+        "Number 2": "Число 2",
+        "Number 3": "Число 3",
+        "Number 4": "Число 4",
+        "Number 5": "Число 5",
+        "Number 6": "Число 6",
+        "Number 7": "Число 7",
+        "Number 8": "Число 8",
+        "Number 9": "Число 9",
+        "Number of Tiles": "Число плиток",
+        "Number of circles": "Число кругов",
+        "Number of segments": "Число сегментов",
+        "OUT": "Выход",
+        "Offset": "Смещение",
+        "Opacity": "Непрозрачность",
+        "Orientation": "Ориентация",
+        "Over": "Сверху",
+        "PBR": "PBR-материал",
+        "PBR Ambient Color": "PBR: цвет окружения",
+        "PBR Light Color": "PBR: цвет света",
+        "PBR Metalness": "PBR: металличность",
+        "PBR Roughness": "PBR: шероховатость",
+        "Particle": "Частица",
+        "Pattern X": "Узор по X",
+        "Pattern Y": "Узор по Y",
+        "Percent": "Процент",
+        "Period": "Период",
+        "Phase": "Фаза",
+        "Point": "Точка",
+        "Point 1": "Точка 1",
+        "Point 2": "Точка 2",
+        "Point 2D": "Точка 2D",
+        "Pointiness": "Заострённость",
+        "Pos 1": "Позиция 1",
+        "Pos 2": "Позиция 2",
+        "Position": "Позиция",
+        "Position on Curve": "Позиция на кривой",
+        "Power": "Степень",
+        "Precision": "Точность",
+        "Previous Selected ID": "Предыдущий выбранный номер",
+        "Probabilty of picking 1": "Вероятность выбора 1",
+        "Progression": "Прогресс",
+        "Quality": "Качество",
+        "Radii": "Радиусы",
+        "Radius": "Радиус",
+        "Radius X": "Радиус по X",
+        "Radius Y": "Радиус по Y",
+        "Radius1": "Радиус 1",
+        "Radius2": "Радиус 2",
+        "Random value": "Случайное значение",
+        "Randomness": "Случайность",
+        "Ray length": "Длина луча",
+        "Refraction": "Преломление",
+        "Refraction Aberration": "Аберрация преломления",
+        "Refraction Density": "Плотность преломления",
+        "Repetitions": "Повторения",
+        "Resolution": "Разрешение",
+        "Respawn after death": "Возрождать после гибели",
+        "Ring": "Кольцо",
+        "Rotation X": "Поворот по X",
+        "Rotation Y": "Поворот по Y",
+        "Rotation Z": "Поворот по Z",
+        "Roundness": "Скругление",
+        "SSAO": "SSAO (экранное затенение)",
+        "SSAO Size": "Размер SSAO",
+        "Sample": "Сэмпл",
+        "Sample Count": "Число сэмплов",
+        "Saturation": "Насыщенность",
+        "Scale": "Масштаб",
+        "Scale X": "Масштаб по X",
+        "Scale Y": "Масштаб по Y",
+        "Scale Z": "Масштаб по Z",
+        "Scale x": "Масштаб по X",
+        "Scale y": "Масштаб по Y",
+        "Scroll X": "Прокрутка по X",
+        "Scroll Y": "Прокрутка по Y",
+        "Seed": "Зерно случайности",
+        "Segments offset": "Смещение сегментов",
+        "Selected ID": "Выбранный номер",
+        "Shadow Softness": "Мягкость теней",
+        "Shadow Strength": "Сила теней",
+        "Shadow Sun Position": "Положение солнца для теней",
+        "Shadows": "Тени",
+        "Shape": "Фигура",
+        "Shape 1": "Фигура 1",
+        "Shape 2": "Фигура 2",
+        "Shape 3D": "Фигура 3D",
+        "Shape Color": "Цвет фигуры",
+        "Shape radius": "Радиус фигуры",
+        "Shift": "Сдвиг",
+        "Sides": "Стороны",
+        "Size": "Размер",
+        "Size Max": "Макс. размер",
+        "Size Min": "Мин. размер",
+        "Smoothing": "Сглаживание",
+        "Spacing": "Интервал",
+        "Speed": "Скорость",
+        "Splits": "Разбиения",
+        "Spread": "Разброс",
+        "Square": "Квадрат",
+        "Square size": "Размер квадрата",
+        "Start": "Начало",
+        "Steps": "Шаги",
+        "Strength": "Сила",
+        "Stretch": "Растяжение",
+        "Subdivision threshold": "Порог деления",
+        "Swirl": "Завихрение",
+        "Thickness": "Толщина",
+        "Threshold": "Порог",
+        "Time": "Время",
+        "To Max": "В максимум",
+        "To Min": "В минимум",
+        "Top Left": "Верхний левый",
+        "Top Right": "Верхний правый",
+        "Trail": "Шлейф",
+        "Transition Duration": "Длительность перехода",
+        "Transition Size": "Размер перехода",
+        "Transition duration": "Длительность перехода",
+        "Translation": "Сдвиг",
+        "Twist": "Скручивание",
+        "Twists": "Витки",
+        "Under": "Снизу",
+        "Use First Value": "Использовать первое значение",
+        "Use outline": "Использовать контур",
+        "Value 1": "Значение 1",
+        "Value 2": "Значение 2",
+        "Vec2": "Вектор 2D",
+        "Vertical": "По вертикали",
+        "Vertices Radius": "Радиус вершин",
+        "Video": "Видео",
+        "Violence": "Резкость",
+        "Webcam": "Веб-камера",
+        "Width": "Ширина",
+        "X Repetitions": "Повторы по X",
+        "X Spacing": "Интервал по X",
+        "Y Repetitions": "Повторы по Y",
+        "Y Spacing": "Интервал по Y",
+        "Z Repetitions": "Повторы по Z",
+        "Z Spacing": "Интервал по Z",
+        "Zoom": "Приближение",
+        "integer": "Целое число",
+        "strength": "Сила",
+        "value": "Значение",
+        "value1": "Значение 1",
+        "value2": "Значение 2"
+    },
+    "nodes": {
+        "2D Modifier/Circular Inversion": "Круговая инверсия",
+        "2D Modifier/Disable 2D Camera": "Отключить камеру 2D",
+        "2D Modifier/Displacement Map": "Карта смещения",
+        "2D Modifier/Distortion Map": "Карта искажения",
+        "2D Modifier/Distortion bulging": {
+            "keywords": "вздутие",
+            "name": "Выпуклость"
+        },
+        "2D Modifier/Dithered Blur": "Зернистое размытие",
+        "2D Modifier/Drop": {
+            "keywords": "рябь круги на воде",
+            "name": "Капля"
+        },
+        "2D Modifier/Fisheye": {
+            "keywords": "линза",
+            "name": "Рыбий глаз"
+        },
+        "2D Modifier/Flip": {
+            "keywords": "перевернуть",
+            "name": "Отразить"
+        },
+        "2D Modifier/Grid": {
+            "keywords": "повтор плитка",
+            "name": "Сетка"
+        },
+        "2D Modifier/Hexagonal Grid": {
+            "keywords": "соты",
+            "name": "Шестиугольная сетка"
+        },
+        "2D Modifier/Joukovsky Transform": "Преобразование Жуковского",
+        "2D Modifier/Julia Fractal": "Фрактал Жюлиа",
+        "2D Modifier/Kaleidoscope": "Калейдоскоп",
+        "2D Modifier/Liquid Warp": {
+            "keywords": "волны течение",
+            "name": "Жидкое искажение"
+        },
+        "2D Modifier/Map on Disk": "Отобразить на диск",
+        "2D Modifier/Mirror Repeat": "Зеркальный повтор",
+        "2D Modifier/Mirror Repeat in Circle": "Зеркальный повтор по кругу",
+        "2D Modifier/Mobius Transform": "Преобразование Мёбиуса",
+        "2D Modifier/Mosaic": {
+            "keywords": "пикселизация",
+            "name": "Мозаика"
+        },
+        "2D Modifier/Mosaic Hexagonal": "Мозаика из шестиугольников",
+        "2D Modifier/Mosaic Hexagonal Triangle": "Мозаика из шестиугольников и треугольников",
+        "2D Modifier/Mosaic Triangle": "Мозаика из треугольников",
+        "2D Modifier/Perspective Warp": "Перспективное искажение",
+        "2D Modifier/Repeat": "Повтор",
+        "2D Modifier/Rotate": {
+            "keywords": "вращение",
+            "name": "Поворот"
+        },
+        "2D Modifier/Scale": "Масштаб",
+        "2D Modifier/Screen Shake": "Тряска экрана",
+        "2D Modifier/Skew": {
+            "keywords": "скос",
+            "name": "Наклон"
+        },
+        "2D Modifier/Star Symmetry": "Звёздная симметрия",
+        "2D Modifier/Symmetry (Mirror)": "Симметрия (зеркало)",
+        "2D Modifier/Translate": {
+            "keywords": "переместить",
+            "name": "Сдвиг"
+        },
+        "2D Modifier/Zoom": {
+            "keywords": "зум",
+            "name": "Приближение"
+        },
+        "3D Shape Blend/Displace": "Смещение поверхности",
+        "3D Shape Blend/Engrave Flat": "Гравировка плоская",
+        "3D Shape Blend/Engrave Sharp": "Гравировка острая",
+        "3D Shape Blend/Intersect": "Пересечение",
+        "3D Shape Blend/Intersect Bead": "Пересечение с валиком",
+        "3D Shape Blend/Intersect Slope": "Пересечение со скосом",
+        "3D Shape Blend/Intersect Stairs": "Пересечение ступенями",
+        "3D Shape Blend/Intersection Border": "Граница пересечения",
+        "3D Shape Blend/Menger Fractal Dual": "Двойной фрактал Менгера",
+        "3D Shape Blend/Mix": "Плавный переход",
+        "3D Shape Blend/Subtract": "Вычитание",
+        "3D Shape Blend/Subtract Bead": "Вычитание с валиком",
+        "3D Shape Blend/Subtract Slope": "Вычитание со скосом",
+        "3D Shape Blend/Subtract Stairs": "Вычитание ступенями",
+        "3D Shape Blend/Surrounding": "Окружение",
+        "3D Shape Blend/Union": "Объединение",
+        "3D Shape Blend/Union Bead": "Объединение с валиком",
+        "3D Shape Blend/Union Slope": "Объединение со скосом",
+        "3D Shape Blend/Union Stairs": "Объединение ступенями",
+        "3D Shape Modifier/Bend": "Изгиб",
+        "3D Shape Modifier/Elongate": {
+            "keywords": "растянуть",
+            "name": "Вытянуть"
+        },
+        "3D Shape Modifier/Fix Artifacts": "Исправить артефакты",
+        "3D Shape Modifier/Hollow": {
+            "keywords": "пустой",
+            "name": "Полая оболочка"
+        },
+        "3D Shape Modifier/Inflate": "Раздуть",
+        "3D Shape Modifier/Menger Fractal": "Фрактал Менгера",
+        "3D Shape Modifier/Noise": "Шум",
+        "3D Shape Modifier/Repeat": "Повтор",
+        "3D Shape Modifier/Repeat Infinitely": "Бесконечный повтор",
+        "3D Shape Modifier/Repeat Polar": "Повтор по кругу",
+        "3D Shape Modifier/Rotate": "Поворот",
+        "3D Shape Modifier/Scale": "Масштаб",
+        "3D Shape Modifier/Symmetry X": "Симметрия по X",
+        "3D Shape Modifier/Symmetry Y": "Симметрия по Y",
+        "3D Shape Modifier/Symmetry Z": "Симметрия по Z",
+        "3D Shape Modifier/Translate": "Сдвиг",
+        "3D Shape Modifier/Twist": "Скручивание",
+        "3D Shape Renderer/3D Renderer": {
+            "keywords": "освещение тени материал",
+            "name": "Рендер 3D"
+        },
+        "3D Shape Renderer/Cloud": {
+            "keywords": "туман дым",
+            "name": "Облако (объёмный рендер)"
+        },
+        "3D Shape Renderer/Normals": "Нормали",
+        "3D Shape from 2D/Extrude": {
+            "keywords": "экструзия",
+            "name": "Выдавливание"
+        },
+        "3D Shape from 2D/Revolve": "Тело вращения",
+        "3D Shape/Bowl": "Чаша",
+        "3D Shape/Box Wireframe": "Каркас куба",
+        "3D Shape/Capsule": "Капсула",
+        "3D Shape/Cone": "Конус",
+        "3D Shape/Cube": "Куб",
+        "3D Shape/Cylinder": "Цилиндр",
+        "3D Shape/Half Space": "Полупространство",
+        "3D Shape/Mandelbulb": {
+            "keywords": "фрактал",
+            "name": "Мандельбульб"
+        },
+        "3D Shape/Menger Sponge": {
+            "keywords": "фрактал",
+            "name": "Губка Менгера"
+        },
+        "3D Shape/Noise (Cobblestone)": "Шум (брусчатка)",
+        "3D Shape/Noise (Fractal)": "Шум (фрактальный)",
+        "3D Shape/Noise (Gyroid)": "Шум (гироид)",
+        "3D Shape/Noise (Random Spheres)": "Шум (случайные сферы)",
+        "3D Shape/Octahedron": "Октаэдр",
+        "3D Shape/Plane": "Плоскость",
+        "3D Shape/Polyhedron": "Многогранник",
+        "3D Shape/Prism": "Призма",
+        "3D Shape/Prism Hexagonal": "Шестигранная призма",
+        "3D Shape/Prism Rhomboid": "Ромбическая призма",
+        "3D Shape/Prism Triangular": "Треугольная призма",
+        "3D Shape/Pyramid": "Пирамида",
+        "3D Shape/Sphere": {
+            "keywords": "шар",
+            "name": "Сфера"
+        },
+        "3D Shape/Torus": {
+            "keywords": "бублик кольцо",
+            "name": "Тор"
+        },
+        "3D Shape/Torus Knot": "Торический узел",
+        "Boolean operations/And": {
+            "keywords": "and",
+            "name": "И"
+        },
+        "Boolean operations/Is Equal": {
+            "keywords": "==",
+            "name": "Равно"
+        },
+        "Boolean operations/Is Greater": {
+            "keywords": ">",
+            "name": "Больше"
+        },
+        "Boolean operations/Not": {
+            "keywords": "not",
+            "name": "НЕ"
+        },
+        "Boolean operations/Or": {
+            "keywords": "or",
+            "name": "ИЛИ"
+        },
+        "Curve 3D/Circle 3D": "Окружность 3D",
+        "Curve Blend/Mix": {
+            "keywords": "морфинг",
+            "name": "Плавный переход"
+        },
+        "Curve Blend/Mix along Curve": "Смешать вдоль кривой",
+        "Curve Modifier/2D Modifier on Curve": "Преобразование 2D для кривой",
+        "Curve Modifier/Add Displacement": {
+            "keywords": "волна шум",
+            "name": "Добавить смещение"
+        },
+        "Curve Modifier/Curve Portion": {
+            "keywords": "обрезать",
+            "name": "Часть кривой"
+        },
+        "Curve Renderer/Curve": {
+            "keywords": "нарисовать кривую",
+            "name": "Линия кривой"
+        },
+        "Curve Renderer/Curve Web": {
+            "keywords": "сетка линий",
+            "name": "Паутина из кривой"
+        },
+        "Curve/Bezier Curve": "Кривая Безье",
+        "Curve/Circle": "Окружность",
+        "Curve/Fermat Spiral": "Спираль Ферма",
+        "Curve/Function to Curve": "Кривая из функции",
+        "Curve/Lemniscate (Infinity)": {
+            "keywords": "восьмёрка",
+            "name": "Лемниската (бесконечность)"
+        },
+        "Curve/Lissajou": "Фигура Лиссажу",
+        "Curve/Spiral": "Спираль",
+        "Force Field/Coulomb": {
+            "keywords": "заряды",
+            "name": "Поле Кулона"
+        },
+        "Force Field/Force Field Renderer": "Отрисовка силового поля",
+        "Force Field/Force Field Renderer 2": "Отрисовка силового поля 2",
+        "Greyscale Blend/Add": {
+            "keywords": "+",
+            "name": "Сложение"
+        },
+        "Greyscale Blend/Divide": {
+            "keywords": "/",
+            "name": "Деление"
+        },
+        "Greyscale Blend/Exponentiate (Pow)": {
+            "keywords": "pow",
+            "name": "Возведение в степень"
+        },
+        "Greyscale Blend/Multi-Select": "Выбор из нескольких",
+        "Greyscale Blend/Multiply": {
+            "keywords": "*",
+            "name": "Умножение"
+        },
+        "Greyscale Blend/Select": {
+            "keywords": "условие",
+            "name": "Выбор"
+        },
+        "Greyscale Blend/Subtract": {
+            "keywords": "-",
+            "name": "Вычитание"
+        },
+        "Greyscale Modifier/Absolute Value": {
+            "keywords": "абсолютное значение abs",
+            "name": "Модуль"
+        },
+        "Greyscale Modifier/Adaptive Halftone": {
+            "keywords": "растр",
+            "name": "Адаптивный полутон"
+        },
+        "Greyscale Modifier/Clamp": {
+            "keywords": "clamp",
+            "name": "Ограничить диапазон"
+        },
+        "Greyscale Modifier/Cos": {
+            "keywords": "cos",
+            "name": "Косинус"
+        },
+        "Greyscale Modifier/Dithering": {
+            "keywords": "растр",
+            "name": "Дизеринг"
+        },
+        "Greyscale Modifier/Exponential": {
+            "keywords": "exp",
+            "name": "Экспонента"
+        },
+        "Greyscale Modifier/Fractalize": "Фрактализация",
+        "Greyscale Modifier/Greyscale Halftone": {
+            "keywords": "растр точки",
+            "name": "Полутон"
+        },
+        "Greyscale Modifier/Invert Gradient": "Инвертировать градиент",
+        "Greyscale Modifier/Logarithm": {
+            "keywords": "log",
+            "name": "Логарифм"
+        },
+        "Greyscale Modifier/Map Range": {
+            "keywords": "remap пересчитать",
+            "name": "Перевести в диапазон"
+        },
+        "Greyscale Modifier/Math Expression": {
+            "keywords": "выражение",
+            "name": "Формула"
+        },
+        "Greyscale Modifier/Max": {
+            "keywords": "max",
+            "name": "Максимум"
+        },
+        "Greyscale Modifier/Min": {
+            "keywords": "min",
+            "name": "Минимум"
+        },
+        "Greyscale Modifier/Posterize (Steps)": "Постеризация (ступени)",
+        "Greyscale Modifier/Pow": {
+            "keywords": "pow",
+            "name": "Степень"
+        },
+        "Greyscale Modifier/Sine Wave": {
+            "keywords": "волна sin",
+            "name": "Синусоида"
+        },
+        "Greyscale Modifier/Spikes": "Пики",
+        "Greyscale Modifier/Square Wave": "Меандр (прямоугольная волна)",
+        "Greyscale Modifier/Stippling": {
+            "keywords": "точки",
+            "name": "Пуантилизм"
+        },
+        "Greyscale Modifier/Tan": {
+            "keywords": "tan",
+            "name": "Тангенс"
+        },
+        "Greyscale Modifier/Wrap (Mod)": {
+            "keywords": "modulo",
+            "name": "Зацикливание (остаток)"
+        },
+        "Greyscale/Fill Function": {
+            "keywords": "константа",
+            "name": "Заливка значением"
+        },
+        "Greyscale/Get Alpha (Opacity)": "Получить альфу (прозрачность)",
+        "Greyscale/Get Blue": "Получить синий канал",
+        "Greyscale/Get Green": "Получить зелёный канал",
+        "Greyscale/Get Hue": "Получить оттенок",
+        "Greyscale/Get Lightness": {
+            "keywords": "яркость",
+            "name": "Получить светлоту"
+        },
+        "Greyscale/Get Red": "Получить красный канал",
+        "Greyscale/Get Saturation": "Получить насыщенность",
+        "Greyscale/Gradient Angular": {
+            "keywords": "конический",
+            "name": "Угловой градиент"
+        },
+        "Greyscale/Gradient Bottom-Top": {
+            "keywords": "вертикальный",
+            "name": "Градиент снизу вверх"
+        },
+        "Greyscale/Gradient Left-Right": {
+            "keywords": "горизонтальный",
+            "name": "Градиент слева направо"
+        },
+        "Greyscale/Gradient Radial": {
+            "keywords": "круговой",
+            "name": "Радиальный градиент"
+        },
+        "Greyscale/Mandelbrot": {
+            "keywords": "фрактал",
+            "name": "Множество Мандельброта"
+        },
+        "Greyscale/Noise Simplex": {
+            "keywords": "перлин облака",
+            "name": "Шум симплекс"
+        },
+        "Greyscale/Noise Voronoi": {
+            "keywords": "клетки",
+            "name": "Шум Вороного"
+        },
+        "Greyscale/Noise White": {
+            "keywords": "зерно",
+            "name": "Белый шум"
+        },
+        "Greyscale/Random": {
+            "keywords": "рандом",
+            "name": "Случайное число"
+        },
+        "Greyscale/Random 1D": "Случайное число 1D",
+        "Greyscale/Random 2D": "Случайное число 2D",
+        "Greyscale/Random 3D": "Случайное число 3D",
+        "Greyscale/Sparkle": {
+            "keywords": "блёстки мерцание",
+            "name": "Искры"
+        },
+        "Greyscale/Voronoi": {
+            "keywords": "клетки ячейки",
+            "name": "Вороной"
+        },
+        "Image Blend/Addition": {
+            "keywords": "добавить осветление add",
+            "name": "Сложение"
+        },
+        "Image Blend/Darken": {
+            "keywords": "минимум",
+            "name": "Затемнение"
+        },
+        "Image Blend/Difference": {
+            "keywords": "вычитание",
+            "name": "Разница"
+        },
+        "Image Blend/Lighten": {
+            "keywords": "максимум",
+            "name": "Замена светлым"
+        },
+        "Image Blend/MIDI Multi-Select": {
+            "keywords": "переключение миди",
+            "name": "Выбор по MIDI"
+        },
+        "Image Blend/MIDI Multi-Select with Transition": {
+            "keywords": "переключение миди",
+            "name": "Выбор по MIDI с переходом"
+        },
+        "Image Blend/Mix (Light)": {
+            "keywords": "микс плавный переход",
+            "name": "Смешать (как свет)"
+        },
+        "Image Blend/Mix (Paint)": {
+            "keywords": "микс mixbox краски",
+            "name": "Смешать (как краски)"
+        },
+        "Image Blend/Multi-Select": {
+            "keywords": "переключение",
+            "name": "Выбор из нескольких"
+        },
+        "Image Blend/Multi-Select with Transition": {
+            "keywords": "переключение",
+            "name": "Выбор из нескольких с переходом"
+        },
+        "Image Blend/Multiply": {
+            "keywords": "затемнить",
+            "name": "Умножение"
+        },
+        "Image Blend/Over (Light)": {
+            "keywords": "поверх наложение",
+            "name": "Наложить сверху (как свет)"
+        },
+        "Image Blend/Over (Paint)": {
+            "keywords": "поверх наложение",
+            "name": "Наложить сверху (как краски)"
+        },
+        "Image Blend/Screen": {
+            "keywords": "осветление",
+            "name": "Экран"
+        },
+        "Image Blend/Select": {
+            "keywords": "условие если",
+            "name": "Выбор"
+        },
+        "Image Blend/Select Randomly": {
+            "keywords": "рандом",
+            "name": "Случайный выбор"
+        },
+        "Image Blend/Switcher": {
+            "keywords": "чередование по времени",
+            "name": "Переключатель"
+        },
+        "Image Modifier (Post Process)/Bichrome": {
+            "keywords": "два цвета дуотон duotone",
+            "name": "Двухцветный"
+        },
+        "Image Modifier (Post Process)/Black & White": {
+            "keywords": "чб обесцветить серый",
+            "name": "Чёрно-белый"
+        },
+        "Image Modifier (Post Process)/Blur": {
+            "keywords": "блюр размыть",
+            "name": "Размытие"
+        },
+        "Image Modifier (Post Process)/Caching": {
+            "keywords": "кэш ускорить заморозить",
+            "name": "Кэширование"
+        },
+        "Image Modifier (Post Process)/Chroma Keying (Green Screen)": {
+            "keywords": "вырезать фон зелёный экран",
+            "name": "Хромакей (зелёный фон)"
+        },
+        "Image Modifier (Post Process)/Chromatic Aberration": {
+            "keywords": "разделение цветов линза",
+            "name": "Хроматическая аберрация"
+        },
+        "Image Modifier (Post Process)/Color Ramp": {
+            "keywords": "раскрасить градиентная карта",
+            "name": "Цветовой градиент"
+        },
+        "Image Modifier (Post Process)/Color to UV": "Цвет в координаты UV",
+        "Image Modifier (Post Process)/Dithering": {
+            "keywords": "растр пиксели сглаживание ретро",
+            "name": "Дизеринг"
+        },
+        "Image Modifier (Post Process)/Film Grain": {
+            "keywords": "шум зернистость плёнка",
+            "name": "Плёночное зерно"
+        },
+        "Image Modifier (Post Process)/Filter Tone": {
+            "keywords": "фильтр тон",
+            "name": "Тонирование"
+        },
+        "Image Modifier (Post Process)/Flare": {
+            "keywords": "блик объектива lens flare",
+            "name": "Блик"
+        },
+        "Image Modifier (Post Process)/Fractalize": {
+            "keywords": "фрактал",
+            "name": "Фрактализация"
+        },
+        "Image Modifier (Post Process)/Get Opacity (Alpha)": {
+            "keywords": "альфа канал",
+            "name": "Получить прозрачность (альфа)"
+        },
+        "Image Modifier (Post Process)/Glitch": {
+            "keywords": "сбой помехи цифровой",
+            "name": "Глитч"
+        },
+        "Image Modifier (Post Process)/Glow": {
+            "keywords": "сияние блум bloom",
+            "name": "Свечение"
+        },
+        "Image Modifier (Post Process)/HSL Adjustments": {
+            "keywords": "коррекция цвета оттенок",
+            "name": "Тон, насыщенность, светлота"
+        },
+        "Image Modifier (Post Process)/Invert (Color)": {
+            "keywords": "негатив",
+            "name": "Инверсия цвета"
+        },
+        "Image Modifier (Post Process)/Invert (Greyscale)": {
+            "keywords": "негатив",
+            "name": "Инверсия яркости"
+        },
+        "Image Modifier (Post Process)/Mask Image": {
+            "keywords": "вырезать скрыть",
+            "name": "Маска изображения"
+        },
+        "Image Modifier (Post Process)/Monochrome": {
+            "keywords": "один цвет",
+            "name": "Монохром"
+        },
+        "Image Modifier (Post Process)/Posterize (Steps)": {
+            "keywords": "уровни квантование",
+            "name": "Постеризация (ступени)"
+        },
+        "Image Modifier (Post Process)/RGB Split": {
+            "keywords": "сдвиг каналов",
+            "name": "Разделение RGB"
+        },
+        "Image Modifier (Post Process)/Render N Times": {
+            "keywords": "повторить",
+            "name": "Отрисовать N раз"
+        },
+        "Image Modifier (Post Process)/Sepia": {
+            "keywords": "старое фото ретро",
+            "name": "Сепия"
+        },
+        "Image Modifier (Post Process)/Set Opacity (Alpha)": {
+            "keywords": "непрозрачность",
+            "name": "Задать прозрачность (альфа)"
+        },
+        "Image Modifier (Post Process)/Sharpen": {
+            "keywords": "чёткость",
+            "name": "Резкость"
+        },
+        "Image Modifier (Post Process)/Threshold": {
+            "keywords": "контраст чб",
+            "name": "Порог"
+        },
+        "Image Modifier (Post Process)/Threshold Smooth": {
+            "keywords": "контраст",
+            "name": "Плавный порог"
+        },
+        "Image Modifier (Post Process)/Tint Shadows and Highlights": {
+            "keywords": "сплит-тонирование",
+            "name": "Тонирование теней и светов"
+        },
+        "Image Modifier (Post Process)/Vignetting": {
+            "keywords": "затемнение краёв",
+            "name": "Виньетка"
+        },
+        "Image Modifier (Post Process)/Wrap (Mod)": {
+            "keywords": "modulo повтор",
+            "name": "Зацикливание (остаток)"
+        },
+        "Image/Color From R,G,B,A": {
+            "keywords": "rgba каналы собрать",
+            "name": "Цвет из каналов R, G, B, A"
+        },
+        "Image/Color HSL": {
+            "keywords": "оттенок насыщенность светлота однотонный заливка",
+            "name": "Цвет HSL"
+        },
+        "Image/Color RGBA": {
+            "keywords": "однотонный заливка сплошной фон",
+            "name": "Цвет RGBA"
+        },
+        "Image/Feedback (One frame delay)": {
+            "keywords": "feedback эхо след шлейф",
+            "name": "Обратная связь (задержка на кадр)"
+        },
+        "Image/Image": {
+            "keywords": "изображение фото png jpg загрузить",
+            "name": "Картинка из файла"
+        },
+        "Image/Spout Syphon IN": {
+            "keywords": "приём видео из другой программы",
+            "name": "Вход Spout / Syphon"
+        },
+        "Image/Video": {
+            "keywords": "видео mp4 ролик",
+            "name": "Видеофайл"
+        },
+        "Image/Webcam": {
+            "keywords": "камера",
+            "name": "Веб-камера"
+        },
+        "Input/Get Hue": "Получить оттенок",
+        "Input/Get Lightness": "Получить светлоту",
+        "Input/Get Saturation": "Получить насыщенность",
+        "Input/Input 2D Matrix": "Матрица 2D",
+        "Input/Input Angle": "Угол",
+        "Input/Input Integer": "Целое число",
+        "Input/Input Number": "Число",
+        "Input/Input Point 2D": "Точка 2D",
+        "Input/Input Vec2": "Вектор 2D",
+        "Input/Input Vec3": "Вектор 3D",
+        "Input/Input Vec4": "Вектор 4D",
+        "Input/Last MIDI button pressed": "Последняя нажатая MIDI-кнопка",
+        "Input/Last last MIDI button pressed": "Предпоследняя нажатая MIDI-кнопка",
+        "Input/Length (Vec2)": "Длина вектора 2D",
+        "Input/Midi": {
+            "keywords": "контроллер",
+            "name": "MIDI"
+        },
+        "Input/OSC": "OSC",
+        "Input/Point on Curve": "Точка на кривой",
+        "Input/Sample Greyscale": "Значение оттенка серого в точке",
+        "Input/Sample Image": {
+            "keywords": "пипетка",
+            "name": "Цвет изображения в точке"
+        },
+        "Input/Spectrum (Audio)": {
+            "keywords": "частоты эквалайзер",
+            "name": "Спектр (звук)"
+        },
+        "Input/Time": {
+            "keywords": "анимация",
+            "name": "Время"
+        },
+        "Input/Time since last MIDI button pressed": "Время после нажатия MIDI-кнопки",
+        "Input/Volume (Audio)": "Громкость (звук)",
+        "Input/Waveform (Audio)": {
+            "keywords": "осциллограф",
+            "name": "Форма волны (звук)"
+        },
+        "Miscellaneous/Get X (Vec2)": "Получить X (вектор 2D)",
+        "Miscellaneous/Get Y (Vec2 )": "Получить Y (вектор 2D)",
+        "Miscellaneous/Make Displacement Map": "Создать карту смещения",
+        "Particle 2D Force/Apply Force": "Приложить силу",
+        "Particle 2D Force/Attractor": {
+            "keywords": "аттрактор",
+            "name": "Притяжение"
+        },
+        "Particle 2D Force/Bounce": "Отскок",
+        "Particle 2D Force/Bounce on Screen Edges": "Отскок от краёв экрана",
+        "Particle 2D Force/Collision": "Столкновение",
+        "Particle 2D Force/Drag": {
+            "keywords": "трение замедление",
+            "name": "Сопротивление"
+        },
+        "Particle 2D Force/Gravity": {
+            "keywords": "падение",
+            "name": "Гравитация"
+        },
+        "Particle 2D Force/Move Away from Point": "Отталкивание от точки",
+        "Particle 2D Force/Set max speed": "Ограничить скорость",
+        "Particle 2D Force/Vortex": {
+            "keywords": "водоворот",
+            "name": "Вихрь"
+        },
+        "Particle 2D Force/Wrap": "Зацикливание пространства",
+        "Particle 2D Force/Wrap on Screen Edges": "Переход через края экрана",
+        "Particle 2D Get Attribute/Get Age": "Возраст",
+        "Particle 2D Get Attribute/Get Color": "Цвет",
+        "Particle 2D Get Attribute/Get Position": "Позиция",
+        "Particle 2D Get Attribute/Get Relative Index": "Относительный номер",
+        "Particle 2D Get Attribute/Get Size": "Размер",
+        "Particle 2D Get Attribute/Get Velocity": "Скорость",
+        "Particle 2D Get Attribute/Is Outside of Shape": "Вне фигуры",
+        "Particle 2D Initializer/Explosion Initializer": "Взрыв",
+        "Particle 2D Initializer/Init Color": "Начальный цвет",
+        "Particle 2D Initializer/Init Color with Image": "Цвет из изображения",
+        "Particle 2D Initializer/Init Lifetime": "Время жизни",
+        "Particle 2D Initializer/Init Lifetime in Range": "Время жизни в диапазоне",
+        "Particle 2D Initializer/Init Particles Count": "Количество частиц",
+        "Particle 2D Initializer/Init Position in Disk": "Позиция внутри круга",
+        "Particle 2D Initializer/Init Position in Rectangle": "Позиция внутри прямоугольника",
+        "Particle 2D Initializer/Init Position on Curve": "Позиция на кривой",
+        "Particle 2D Initializer/Init Position on Screen": "Позиция на экране",
+        "Particle 2D Initializer/Init Size": "Начальный размер",
+        "Particle 2D Initializer/Init Size in Range": "Размер в диапазоне",
+        "Particle 2D Initializer/Init Velocity Away from Curve": "Скорость от кривой",
+        "Particle 2D Initializer/Init Velocity Away from Point": "Скорость от точки",
+        "Particle 2D Set Attribute/Kill particle": "Уничтожить частицу",
+        "Particle 2D Set Attribute/Set Color": "Задать цвет",
+        "Particle 2D Set Attribute/Set Size": "Задать размер",
+        "Particle 3D Force/Apply Force": "Приложить силу",
+        "Particle 3D Force/Attractor": {
+            "keywords": "аттрактор",
+            "name": "Притяжение"
+        },
+        "Particle 3D Force/Bounce": "Отскок",
+        "Particle 3D Force/Collision": "Столкновение",
+        "Particle 3D Force/Drag": {
+            "keywords": "трение замедление",
+            "name": "Сопротивление"
+        },
+        "Particle 3D Force/Gravity": {
+            "keywords": "падение",
+            "name": "Гравитация"
+        },
+        "Particle 3D Force/Move Away from Point": "Отталкивание от точки",
+        "Particle 3D Force/Set max speed": "Ограничить скорость",
+        "Particle 3D Force/Vortex": {
+            "keywords": "водоворот",
+            "name": "Вихрь"
+        },
+        "Particle 3D Force/Wrap": "Зацикливание пространства",
+        "Particle 3D Get Attribute/Get Age": "Возраст",
+        "Particle 3D Get Attribute/Get Color": "Цвет",
+        "Particle 3D Get Attribute/Get Position": "Позиция",
+        "Particle 3D Get Attribute/Get Relative Index": "Относительный номер",
+        "Particle 3D Get Attribute/Get Size": "Размер",
+        "Particle 3D Get Attribute/Get Velocity": "Скорость",
+        "Particle 3D Get Attribute/Is Outside of Shape": "Вне фигуры",
+        "Particle 3D Initializer/Explosion Initializer": "Взрыв",
+        "Particle 3D Initializer/Init Color": "Начальный цвет",
+        "Particle 3D Initializer/Init Lifetime": "Время жизни",
+        "Particle 3D Initializer/Init Lifetime in Range": "Время жизни в диапазоне",
+        "Particle 3D Initializer/Init Particles Count": "Количество частиц",
+        "Particle 3D Initializer/Init Position in Disk": "Позиция внутри круга",
+        "Particle 3D Initializer/Init Position in Rectangle": "Позиция внутри прямоугольника",
+        "Particle 3D Initializer/Init Position on Curve": "Позиция на кривой",
+        "Particle 3D Initializer/Init Size": "Начальный размер",
+        "Particle 3D Initializer/Init Size in Range": "Размер в диапазоне",
+        "Particle 3D Initializer/Init Velocity Away from Curve": "Скорость от кривой",
+        "Particle 3D Initializer/Init Velocity Away from Point": "Скорость от точки",
+        "Particle 3D Set Attribute/Kill particle": "Уничтожить частицу",
+        "Particle 3D Set Attribute/Set Color": "Задать цвет",
+        "Particle 3D Set Attribute/Set Size": "Задать размер",
+        "Shape Blend/Engrave Flat": "Гравировка плоская",
+        "Shape Blend/Engrave Sharp": "Гравировка острая",
+        "Shape Blend/Intersect": "Пересечение",
+        "Shape Blend/Intersect Bead": "Пересечение с валиком",
+        "Shape Blend/Intersect Slope": "Пересечение со скосом",
+        "Shape Blend/Intersect Stairs": "Пересечение ступенями",
+        "Shape Blend/Intersection Border": "Граница пересечения",
+        "Shape Blend/Mix": {
+            "keywords": "морфинг смешать",
+            "name": "Плавный переход"
+        },
+        "Shape Blend/Subtract": {
+            "keywords": "вырезать",
+            "name": "Вычитание"
+        },
+        "Shape Blend/Subtract Bead": "Вычитание с валиком",
+        "Shape Blend/Subtract Slope": "Вычитание со скосом",
+        "Shape Blend/Subtract Stairs": "Вычитание ступенями",
+        "Shape Blend/Union": {
+            "keywords": "сложить",
+            "name": "Объединение"
+        },
+        "Shape Blend/Union Bead": "Объединение с валиком",
+        "Shape Blend/Union Slope": "Объединение со скосом",
+        "Shape Blend/Union Stairs": "Объединение ступенями",
+        "Shape Modifier/Inflate": {
+            "keywords": "утолщить",
+            "name": "Раздуть"
+        },
+        "Shape Modifier/Invert": {
+            "keywords": "вывернуть",
+            "name": "Инвертировать фигуру"
+        },
+        "Shape Modifier/Join N Times": "Повторить N раз",
+        "Shape Modifier/Outline": {
+            "keywords": "обводка",
+            "name": "Контур"
+        },
+        "Shape Modifier/Rings": {
+            "keywords": "концентрические",
+            "name": "Кольца"
+        },
+        "Shape Modifier/Round": {
+            "keywords": "скругление углов",
+            "name": "Скруглить"
+        },
+        "Shape Renderer/Debug": "Отладка (поле расстояний)",
+        "Shape Renderer/Distance": "Расстояние",
+        "Shape Renderer/Feather": {
+            "keywords": "размытый край",
+            "name": "Мягкий край"
+        },
+        "Shape Renderer/Glow": {
+            "keywords": "сияние неон",
+            "name": "Свечение"
+        },
+        "Shape Renderer/Gradient": "Градиент",
+        "Shape/Cairo Tiling": {
+            "keywords": "плитка паттерн",
+            "name": "Каирская мозаика"
+        },
+        "Shape/Disk": {
+            "keywords": "диск окружность",
+            "name": "Круг"
+        },
+        "Shape/Function to Shape": "Фигура из функции",
+        "Shape/Mask to Shape": "Фигура из маски",
+        "Shape/Moon": {
+            "keywords": "луна",
+            "name": "Полумесяц"
+        },
+        "Shape/Polygon": {
+            "keywords": "треугольник шестиугольник",
+            "name": "Многоугольник"
+        },
+        "Shape/Rectangle": {
+            "keywords": "квадрат",
+            "name": "Прямоугольник"
+        },
+        "Shape/Segment": {
+            "keywords": "линия",
+            "name": "Отрезок"
+        },
+        "Shape/Star": "Звезда"
+    },
+    "tasks": {
+        "Animation and time": {
+            "keywords": "анимация время движение пульсация волна анимировать animate time",
+            "name": "Анимация и время"
+        },
+        "Audio, MIDI and OSC": {
+            "keywords": "звук аудио музыка громкость спектр миди контроллер osc audio sound music volume midi",
+            "name": "Звук, MIDI и OSC"
+        },
+        "Blend images": {
+            "keywords": "смешать наложить сложить умножить режим наложения миксовать blend mix overlay multiply",
+            "name": "Смешать изображения"
+        },
+        "Blur and sharpness": {
+            "keywords": "размыть размытость блюр смягчить резкость мягкость blur sharpen soft",
+            "name": "Размытие и резкость"
+        },
+        "Color correction": {
+            "keywords": "цвет оттенок яркость насыщенность контраст тон чб чёрно-белый инверсия коррекция color hue saturation brightness contrast",
+            "name": "Цветокоррекция"
+        },
+        "Combine shapes": {
+            "keywords": "объединить вычесть пересечь сложить булевы комбинировать union subtract intersect combine",
+            "name": "Объединить фигуры"
+        },
+        "Create a shape": {
+            "keywords": "форма объект примитив круг квадрат сфера куб линия shape create primitive",
+            "name": "Создать фигуру"
+        },
+        "Distort": {
+            "keywords": "исказить деформировать волна рябь линза рыбий глаз смещение изогнуть скрутить distort warp bend twist",
+            "name": "Искажение и деформация"
+        },
+        "Draw a shape or curve": {
+            "keywords": "нарисовать отрисовать показать цвет заливка свечение рендер render draw",
+            "name": "Отрисовать фигуру или кривую"
+        },
+        "Edit a shape": {
+            "keywords": "фигура контур обводка скругление раздуть shape modify outline round",
+            "name": "Изменить фигуру"
+        },
+        "Gradients": {
+            "keywords": "градиент переход цвета плавный рампа gradient ramp",
+            "name": "Градиенты"
+        },
+        "Make 3D from 2D": {
+            "keywords": "выдавить экструзия вращение объём extrude revolve",
+            "name": "Сделать 3D из 2D"
+        },
+        "Masks and transparency": {
+            "keywords": "маска прозрачность альфа хромакей зелёный экран вырезать mask alpha opacity chroma key",
+            "name": "Маски и прозрачность"
+        },
+        "Math": {
+            "keywords": "математика число формула синус косинус сложение вычитание умножение логика math number formula",
+            "name": "Математика"
+        },
+        "Move, rotate, scale": {
+            "keywords": "двигать сдвинуть переместить повернуть вращать масштабировать увеличить уменьшить отразить трансформация move rotate scale translate zoom transform",
+            "name": "Перемещение, поворот, масштаб"
+        },
+        "Particles": {
+            "keywords": "частицы симуляция гравитация притяжение particles simulation",
+            "name": "Частицы"
+        },
+        "Patterns and noise": {
+            "keywords": "паттерн текстура шум фрактал случайный зерно процедурный pattern noise texture fractal random",
+            "name": "Узоры и шум"
+        },
+        "Repeat and symmetry": {
+            "keywords": "повторить размножить сетка плитка тайл калейдоскоп зеркало отражение симметрия мозаика repeat tile grid mirror kaleidoscope symmetry",
+            "name": "Повтор и симметрия"
+        },
+        "Stylize and effects": {
+            "keywords": "эффект стиль ретро глитч зерно плёнка свечение виньетка растр полутон стилизовать effect style glitch grain halftone",
+            "name": "Стилизация и эффекты"
+        },
+        "Switch between variants": {
+            "keywords": "выбор переключатель выбрать переключить случайный select switch",
+            "name": "Переключение вариантов"
+        },
+        "Values and parameters": {
+            "keywords": "число параметр значение вход точка вектор угол input value number parameter",
+            "name": "Значения и параметры"
+        },
+        "Video, camera and external sources": {
+            "keywords": "видео камера вебкамера картинка файл изображение загрузить spout syphon video webcam image file",
+            "name": "Видео, камера и внешние источники"
+        }
+    },
+    "ui": {
+        " [Coollab's Instagram](https://www.instagram.com/coollab_art/).": " [Instagram Coollab](https://www.instagram.com/coollab_art/).",
+        " [Coollab's gallery](https://coollab-art.com/Gallery).": " [галерее Coollab](https://coollab-art.com/Gallery).",
+        "\"Save As\" behaves as a \"Save Backup\"": "\"Сохранить как\" работает как резервная копия",
+        "(Click to copy)\n\n{}": "(Нажмите, чтобы скопировать)\n\n{}",
+        "*Use your knob / fader / button and you will see the value changing in the histograms below. You can then hover it to see the index that you need to specify to select a MIDI channel.\nNOTE: if you want to use a Button, don't forget to change the Channel Kind on the MIDI node!*\n[Check out the tutorial for more details](https://coollab-art.com/Tutorials/VJ/MIDI)": "*Покрутите ручку / фейдер или нажмите кнопку — значение изменится на гистограммах ниже. Наведите на него курсор, чтобы узнать номер, который нужно указать для выбора MIDI-канала.\nВАЖНО: если используете кнопку, не забудьте поменять тип канала в ноде MIDI!*\n[Подробнее в уроке](https://coollab-art.com/Tutorials/VJ/MIDI)",
+        "2D Camera": "Камера 2D",
+        "2D Particles": "Частицы 2D",
+        "2D Shapes": "Фигуры 2D",
+        "2D Space Transformations": "Преобразования пространства 2D",
+        "3D Camera": "Камера 3D",
+        "3D Model Export": "Экспорт 3D-модели",
+        "3D Particles": "Частицы 3D",
+        "3D Shapes": "3D",
+        "About": "О программе",
+        "Active": "Активно",
+        "Add a color": "Добавить цвет",
+        "Add button": "Добавить кнопку",
+        "Add fader": "Добавить фейдер",
+        "Adding failed": "Не удалось добавить",
+        "Adds additional icons for some menus, buttons, etc.": "Добавляет значки к некоторым меню, кнопкам и т.п.",
+        "All tips": "Все советы",
+        "Allows the RGB values to go outside of the [0, 255] range.": "Разрешает значениям RGB выходить за пределы диапазона [0, 255].",
+        "Allows the RGBA values to go outside of the [0, 255] range.": "Разрешает значениям RGBA выходить за пределы диапазона [0, 255].",
+        "Always snap": "Всегда привязывать",
+        "An optional link for people to find you or your work: it can be your portfolio, linktree, Instagram, etc.": "Необязательная ссылка, по которой вас или ваши работы смогут найти: портфолио, linktree, Instagram и т.п.",
+        "Are you sure?": "Вы уверены?",
+        "Artwork": "Работа",
+        "Aspect Ratio": "Соотношение сторон",
+        "Audio": "Звук",
+        "Audio Device": "Аудиоустройство",
+        "Audio File": "Аудиофайл",
+        "Author": "Автор",
+        "Auto": "Авто",
+        "Autosave": "Автосохранение",
+        "Bars": "Столбцы",
+        "Buttons:": "Кнопки:",
+        "By default, only the nodes that can be plugged into the link you are dragging are shown.": "По умолчанию показаны только ноды, которые можно подключить к перетаскиваемой связи.",
+        "By task": "По задаче",
+        "By type": "По типу",
+        "Camera": "Камера",
+        "Camera 2D zoom sensitivity": "Чувствительность зума камеры 2D",
+        "Can't create a preset with an empty name.": "Нельзя создать пресет без имени.",
+        "Cancel": "Отмена",
+        "Cancel all tasks": "Отменить все задачи",
+        "Capped Framerate": "Ограничение частоты кадров",
+        "Clear": "Очистить",
+        "Close window": "Закрыть окно",
+        "Color Theme": "Цветовая тема",
+        "Color Themes": "Цветовые темы",
+        "Commands": "Команды",
+        "Compile all is0 Nodes": "Скомпилировать все ноды is0",
+        "Compile everything": "Скомпилировать всё",
+        "Completed": "Готово",
+        "Console": "Консоль",
+        "Controller": "Контроллер",
+        "Copy to clipboard": "Скопировать в буфер обмена",
+        "Copy {} to clipboard": "Скопировать {} в буфер обмена",
+        "Crash": "Сбой",
+        "Curves": "Кривые и линии",
+        "Debug": "Отладка",
+        "Delay": "Задержка",
+        "Delete Preset": "Удалить пресет",
+        "Description": "Описание",
+        "Did you know?": "А вы знали?",
+        "Display as": "Показывать как",
+        "Drag speed": "Скорость перетаскивания",
+        "Editing failed": "Не удалось изменить",
+        "Email *": "Эл. почта *",
+        "Enable multi-viewport": "Окна вне главного окна",
+        "Equalize": "Выровнять",
+        "Expand the view": "Развернуть просмотр",
+        "Expired (Not used for {})": "Устарело (не используется {})",
+        "Export": "Экспорт",
+        "Export 3D Model": "Экспортировать 3D-модель",
+        "Export a 3D Model": "Экспорт 3D-модели",
+        "Export a Video": "Экспорт видео",
+        "Export an Image": "Экспорт изображения",
+        "Extra Icons": "Дополнительные значки",
+        "Failed to open project": "Не удалось открыть проект",
+        "Failed to package project": "Не удалось упаковать проект",
+        "Far Plane": "Дальняя плоскость",
+        "Field of View": "Угол обзора",
+        "File": "Файл",
+        "Folder": "Папка",
+        "Frame (Comment)": "Рамка (комментарий)",
+        "Framerate": "Частота кадров",
+        "From": "От",
+        "Go!": "Поехали!",
+        "Greyscale": "Оттенки серого и числа",
+        "HDR": "HDR",
+        "Height stretch": "Растяжение по высоте",
+        "History": "История",
+        "I additionally agree to have my artwork shared on": "Также я согласен(на), чтобы мою работу опубликовали в",
+        "I agree that my artwork will be publicly visible on": "Я согласен(на), чтобы моя работа была публично видна в",
+        "INVALID": "НЕДОПУСТИМО",
+        "If you always want to switch back you can make this the default behaviour by enabling \"Save As behaves as a Save Backup\" in the": "Если вы всегда хотите возвращаться назад, включите «\"Сохранить как\" работает как резервная копия» в меню",
+        "If you always want to switch you can make this the default behaviour by disabling \"Save As behaves as a Save Backup\" in the": "Если вы всегда хотите переключаться, выключите «\"Сохранить как\" работает как резервная копия» в меню",
+        "If you want to edit or remove it, send an email at [coollab.lib@gmail.com](mailto:coollab.lib@gmail.com) from the email address that you will provide below.": "Чтобы изменить или удалить работу, напишите на [coollab.lib@gmail.com](mailto:coollab.lib@gmail.com) с адреса, который укажете ниже.",
+        "Image": "Изображение",
+        "Image error": "Ошибка изображения",
+        "Image options": "Параметры изображения",
+        "Index": "Номер",
+        "Input Mode": "Режим ввода",
+        "Input Selection": "Выбор источника",
+        "Input device": "Устройство ввода",
+        "Inputs and Logic": "Входные значения и логика",
+        "Inspector": "Инспектор",
+        "Interpolation Mode": "Интерполяция",
+        "Invalid node parameter": "Неверный параметр ноды",
+        "Is logarithmic": "Логарифмическая шкала",
+        "Kind": "Тип",
+        "Language": "Язык",
+        "Last button pressed: {}": "Последняя нажатая кнопка: {}",
+        "Last last button pressed: {}": "Предпоследняя нажатая кнопка: {}",
+        "Legal": "Правовая информация",
+        "License": "Лицензия",
+        "Limit render size": "Ограничить размер рендера",
+        "Lines": "Линии",
+        "Look at the origin": "Смотреть в центр",
+        "Loop mode": "Режим зацикливания",
+        "MIDI": "MIDI",
+        "Main node": "Главная нода",
+        "Max pitch computed": "Макс. вычисляемая частота",
+        "Maybe you are not allowed to save files in this folder?": "Возможно, у вас нет прав на сохранение в эту папку?",
+        "Meshing": "Построение сетки",
+        "Miscellaneous": "Разное",
+        "Name": "Имя",
+        "Name already used by another project": "Это имя уже занято другим проектом",
+        "Name cannot be empty": "Имя не может быть пустым",
+        "Name cannot contain the character": "Имя не может содержать символ",
+        "Name cannot end with a space": "Имя не может заканчиваться пробелом",
+        "Name or task": "Название или задача",
+        "Near Plane": "Ближняя плоскость",
+        "New preset name": "Имя нового пресета",
+        "Next tip": "Следующий совет",
+        "No node found": "Ничего не найдено",
+        "Node file not found": "Файл ноды не найден",
+        "Nodes": "Ноды",
+        "Number of Pixels": "Число пикселей",
+        "Number of main input pins": "Число главных входов",
+        "Number of snaps": "Число шагов привязки",
+        "OSC": "OSC",
+        "Open": "Открыть",
+        "Open \"{}\" folder": "Открыть папку \"{}\"",
+        "Open MIDI config to find out which Index corresponds to which knob / slider / button on your controller.": "Откройте настройки MIDI, чтобы узнать, какой номер соответствует какой ручке / слайдеру / кнопке вашего контроллера.",
+        "Open OSC config to choose which port and IP address to listen to.": "Откройте настройки OSC, чтобы выбрать порт и IP-адрес для прослушивания.",
+        "Open a tip": "Показать совет",
+        "Open audio config to select which audio file to play, or which input device (e.g. microphone) to use.": "Откройте настройки звука, чтобы выбрать аудиофайл или устройство ввода (например, микрофон).",
+        "Open in file explorer": "Показать в проводнике",
+        "Open webcam config to choose its resolution. This can help if the refresh rate of your webcam is too slow.": "Откройте настройки веб-камеры, чтобы выбрать разрешение. Это поможет, если камера обновляется слишком медленно.",
+        "OpenGL version is lower than 430. Meshing need compute shaders, which are not supported by this version.": "Версия OpenGL ниже 4.3. Для построения сетки нужны вычислительные шейдеры, а эта версия их не поддерживает.",
+        "Orbit Mode": "Режим орбиты",
+        "Output": "Вывод",
+        "Overwrite": "Перезаписать",
+        "Overwrite mode": "Режим перезаписи",
+        "Particles Count": "Количество частиц",
+        "Performance": "Производительность",
+        "Playback Volume": "Громкость воспроизведения",
+        "Playback options": "Параметры воспроизведения",
+        "Presets": "Пресеты",
+        "Previous tip": "Предыдущий совет",
+        "Project Command-Line Arguments": "Аргументы командной строки проекта",
+        "Remove a color by middle click on it": "Удалить цвет — щелчок средней кнопкой мыши",
+        "Remove button": "Удалить кнопку",
+        "Remove fader": "Удалить фейдер",
+        "Rename": "Переименовать",
+        "Rendering is disabled because the project crashed last time. Undo your recent changes to the nodes patch, and once you think it shouldn't crash anymore press \"Go!\"": "Отрисовка отключена, потому что в прошлый раз проект аварийно завершился. Отмените последние изменения в нодах и, когда решите, что сбоя больше не будет, нажмите \"Поехали!\"",
+        "Repeat Mode": "Режим повтора",
+        "Reset": "Сбросить",
+        "Reset 2D and 3D cameras": "Сбросить камеры 2D и 3D",
+        "Reset Camera": "Сбросить камеру",
+        "Reset Metadata": "Сбросить настройки виджета",
+        "Reset all values": "Сбросить все значения",
+        "Reset time to 0": "Сбросить время на 0",
+        "Reset transform": "Сбросить трансформацию",
+        "Resolution": "Разрешение",
+        "Resolution: ": "Разрешение: ",
+        "Rotation": "Поворот",
+        "Safe Mode": "Безопасный режим",
+        "Samples Count": "Число сэмплов",
+        "Samples count": "Число сэмплов",
+        "Save": "Сохранить",
+        "Save As": "Сохранить как",
+        "Save Preset": "Сохранить пресет",
+        "Saved Project": "Проект сохранён",
+        "Saved as": "Сохранено как",
+        "Select File": "Выбрать файл",
+        "Select a node to edit its parameters": "Выберите ноду, чтобы изменить её параметры",
+        "Send": "Отправить",
+        "Server": "Сервер",
+        "Settings": "Настройки",
+        "Share online": "Поделиться в сети",
+        "Show all nodes": "Показать все ноды",
+        "Show milliseconds": "Показывать миллисекунды",
+        "Shrink the view": "Свернуть просмотр",
+        "Single-click to input in \"Drag number\" widgets.": "Ввод одним щелчком в числовых полях",
+        "Spectrum": "Спектр",
+        "Spout Sender": "Отправитель Spout",
+        "Spout/Syphon OUT": "Выход Spout/Syphon",
+        "Spout/Syphon error": "Ошибка Spout/Syphon",
+        "Start exporting": "Начать экспорт",
+        "Start time": "Время начала",
+        "Stop exporting": "Остановить экспорт",
+        "Switch back to": "Вернуться к",
+        "Switch to": "Перейти к",
+        "Switch units (Time or Frames)": "Сменить единицы (время или кадры)",
+        "Tasks Waiting ({})": "Задачи в очереди ({})",
+        "Tasks in Progress ({})": "Выполняемые задачи ({})",
+        "The number of samples to take along each axis of the volume.\nIncreasing it will increase the precision of the mesh, but will take longer to export and add more vertices.": "Число сэмплов по каждой оси объёма.\nЧем больше, тем точнее сетка, но экспорт дольше и вершин больше.",
+        "The server is closed": "Сервер остановлен",
+        "The server is running": "Сервер работает",
+        "There is already a preset with the same name.": "Пресет с таким именем уже существует.",
+        "There is already a preset with the same values.": "Пресет с такими значениями уже существует.",
+        "This is optional. If you don't want to, please at least consider sharing it on your account and tagging us @coollab_art and using the #coollab_art.": "Это необязательно. Если не хотите, пожалуйста, опубликуйте работу у себя, отметив нас @coollab_art и добавив хештег #coollab_art.",
+        "This value is connected to a node in the graph, you cannot edit it here.": "Это значение подключено к ноде в графе, здесь его изменить нельзя.",
+        "Time": "Время",
+        "Time since last button pressed: {}": "Время после нажатия кнопки: {}",
+        "Title": "Название",
+        "Toggle Fullscreen (F10)": "Полноэкранный режим (F10)",
+        "Translation": "Сдвиг",
+        "Try to open file in explorer": "Открыть файл в проводнике",
+        "Try to open in file explorer": "Открыть в проводнике",
+        "UI": "Интерфейс",
+        "UI Zoom": "Масштаб интерфейса",
+        "Unsaved Settings...": "Несохранённые настройки...",
+        "Use a slider": "Использовать слайдер",
+        "Video": "Видео",
+        "Video Export Canceled": "Экспорт видео отменён",
+        "Video Export Failed": "Ошибка экспорта видео",
+        "Video Export Success": "Видео экспортировано",
+        "Video error": "Ошибка видео",
+        "Video export in progress": "Идёт экспорт видео",
+        "View": "Просмотр",
+        "Volume": "Громкость",
+        "Volume Amplifier": "Усиление громкости",
+        "Waveform": "Форма волны",
+        "We will keep the artwork for 5 years (or until you request us to remove it). After that we will remove the artwork and all associated data from our database.": "Мы храним работу 5 лет (или пока вы не попросите удалить её). После этого работа и все связанные данные удаляются из нашей базы.",
+        "We will not use this data. This is only so that you can email us and request to edit or delete your data or artwork. We will only accept requests to edit an artwork if it is sent from the email that you provide here. Send all your requests at coollab.lib@gmail.com": "Мы не используем эти данные. Они нужны только для того, чтобы вы могли написать нам и попросить изменить или удалить ваши данные или работу. Запросы на изменение принимаются только с указанного здесь адреса. Пишите на coollab.lib@gmail.com",
+        "Webcam": "Веб-камера",
+        "Webcam error": "Ошибка веб-камеры",
+        "Webcams": "Веб-камеры",
+        "Website": "Сайт",
+        "When this is enabled, Save As will not make you switch to the new project you just saved. For example, if you are working on \"My Project\" and do a Save As \"V1\", you will stay on the \"My Project\" project (whereas if this option is disabled, you would now be working on \"V1\").\nYou will notice the name changing in the window's title bar if you switch to a different project.": "Если включено, после \"Сохранить как\" вы останетесь в текущем проекте. Например, если вы работаете над \"Мой проект\" и сохраняете его как \"V1\", вы продолжите работать над \"Мой проект\" (а если опция выключена — уже над \"V1\").\nПри смене проекта меняется название в заголовке окна.",
+        "Window size": "Размер окна",
+        "Windows": "Окна",
+        "With conversion": "С преобразованием типа",
+        "You can now see your image online at [https://coollab-art.com/Gallery](https://coollab-art.com/Gallery)": "Теперь ваше изображение можно посмотреть на [https://coollab-art.com/Gallery](https://coollab-art.com/Gallery)",
+        "You cannot choose the size of your image because we don't want to store images that are too big.\nYou can only control the Aspect Ratio above.": "Размер изображения выбрать нельзя: мы не храним слишком большие картинки.\nМожно настроить только соотношение сторон выше.",
+        "Your image will be visible on [Coollab's gallery](https://coollab-art.com/Gallery).": "Ваше изображение появится в [галерее Coollab](https://coollab-art.com/Gallery).",
+        "Your link": "Ваша ссылка",
+        "Your name": "Ваше имя",
+        "Zoom": "Масштаб",
+        "error message": "сообщение об ошибке",
+        "frames": "кадров",
+        "full message": "сообщение целиком",
+        "remaining": "осталось",
+        "shader code": "код шейдера",
+        "to": "до",
+        "{} (Simulation)": "{} (симуляция)"
+    }
+}

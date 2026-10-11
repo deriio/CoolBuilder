@@ -1,3 +1,4 @@
+#include "Cool/i18n/i18n.hpp"
 #include "Module_Particles.h"
 #include <glm/gtx/matrix_transform_2d.hpp>
 #include "Cool/Log/message_console.hpp"
@@ -152,7 +153,7 @@ void Module_Particles::update_particles(DataToPassToShader const& data)
 
 void Module_Particles::imgui_generated_shader_code_tab()
 {
-    if (ImGui::BeginTabItem(fmt::format("{} (Simulation)", name()).c_str()))
+    if (ImGui::BeginTabItem(fmt::format(fmt::runtime(Cool::tr("{} (Simulation)")), name()).c_str()))
     {
         if (Cool::ImGuiExtras::input_text_multiline("##Particles simulation", &_shader_code, ImVec2{-1.f, -1.f}))
             set_simulation_shader_code(_shader_code, false, _particle_system ? _particle_system->dimension() : _particle_system_dimension);

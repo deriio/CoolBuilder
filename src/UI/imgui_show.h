@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Cool/i18n/i18n.hpp"
 #include <reg/reg.hpp>
 #include <stringify/stringify.hpp>
 #include "Cool/ImGui/ImGuiExtras.h"
@@ -15,7 +16,7 @@ void imgui_show(T const& value)
     bool const clicked = ImGui::IsItemClicked();
     if (ImGui::IsItemHovered())
         ImGui::SetMouseCursor(ImGuiMouseCursor_Hand);
-    ImGui::SetItemTooltip("%s", "Copy to clipboard");
+    ImGui::SetItemTooltip("%s", Cool::tr("Copy to clipboard"));
     if (clicked)
         ImGui::SetClipboardText(text.c_str());
 }

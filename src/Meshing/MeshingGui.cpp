@@ -1,4 +1,5 @@
 #include "MeshingGui.hpp"
+#include "Cool/i18n/i18n.hpp"
 #include <Cool/ImGui/ImGuiExtras.h>
 #include <Cool/Path/Path.h>
 #include "Cool/ImGui/IcoMoonCodepoints.h"
@@ -43,7 +44,7 @@ void MeshingGui::imgui_window(Cool::MeshExportSettings& mesh_export_settings, Da
         mesh_export_settings.imgui();
 
         Cool::ImGuiExtras::before_export_button(mesh_export_settings.path, Cool::PathChecks{});
-        if (ImGui::Button(Cool::icon_fmt("Export 3D Model", ICOMOON_UPLOAD2).c_str()))
+        if (ImGui::Button(Cool::icon_fmt(Cool::tr("Export 3D Model"), ICOMOON_UPLOAD2).c_str()))
         {
             gen_and_export_mesh(_main_node_id, _meshing_settings, mesh_export_settings, data_to_pass_to_shader, data_to_generate_shader_code);
             _window.close();

@@ -1,0 +1,410 @@
+{
+    "//": "Organization of the nodes menu. Names are in English and get translated through res/i18n/<language>.json (sections \"ui\" for groups and \"tasks\" for tasks).",
+    "by_type": [
+        {
+            "name": "Image",
+            "categories": [
+                "Image",
+                "Image Modifier (Post Process)",
+                "Image Blend"
+            ]
+        },
+        {
+            "name": "Greyscale",
+            "categories": [
+                "Greyscale",
+                "Greyscale Modifier",
+                "Greyscale Blend"
+            ]
+        },
+        {
+            "name": "2D Shapes",
+            "categories": [
+                "Shape",
+                "Shape Modifier",
+                "Shape Blend",
+                "Shape Renderer"
+            ]
+        },
+        {
+            "name": "Curves",
+            "categories": [
+                "Curve",
+                "Curve Modifier",
+                "Curve Blend",
+                "Curve Renderer",
+                "Curve 3D"
+            ]
+        },
+        {
+            "name": "2D Space Transformations",
+            "categories": [
+                "2D Modifier"
+            ]
+        },
+        {
+            "name": "3D Shapes",
+            "categories": [
+                "3D Shape",
+                "3D Shape Modifier",
+                "3D Shape Blend",
+                "3D Shape from 2D",
+                "3D Shape Renderer"
+            ]
+        },
+        {
+            "name": "2D Particles",
+            "categories": [
+                "Particle 2D Initializer",
+                "Particle 2D Force",
+                "Particle 2D Set Attribute",
+                "Particle 2D Get Attribute",
+                "Force Field"
+            ]
+        },
+        {
+            "name": "3D Particles",
+            "categories": [
+                "Particle 3D Initializer",
+                "Particle 3D Force",
+                "Particle 3D Set Attribute",
+                "Particle 3D Get Attribute"
+            ]
+        },
+        {
+            "name": "Inputs and Logic",
+            "categories": [
+                "Input",
+                "Boolean operations",
+                "Miscellaneous"
+            ]
+        }
+    ],
+    "by_task": [
+        {
+            "id": "Create a shape",
+            "nodes": [],
+            "categories": [
+                "Shape",
+                "3D Shape",
+                "Curve",
+                "Curve 3D"
+            ]
+        },
+        {
+            "id": "Patterns and noise",
+            "nodes": [
+                "Greyscale/Noise Simplex",
+                "Greyscale/Noise Voronoi",
+                "Greyscale/Noise White",
+                "Greyscale/Voronoi",
+                "Greyscale/Mandelbrot",
+                "Greyscale/Sparkle",
+                "Greyscale/Random",
+                "Greyscale/Random 1D",
+                "Greyscale/Random 2D",
+                "Greyscale/Random 3D",
+                "Shape/Cairo Tiling",
+                "2D Modifier/Grid",
+                "2D Modifier/Hexagonal Grid",
+                "2D Modifier/Mosaic",
+                "2D Modifier/Mosaic Hexagonal",
+                "2D Modifier/Mosaic Triangle",
+                "2D Modifier/Mosaic Hexagonal Triangle",
+                "2D Modifier/Julia Fractal",
+                "3D Shape/Noise (Cobblestone)",
+                "3D Shape/Noise (Fractal)",
+                "3D Shape/Noise (Gyroid)",
+                "3D Shape/Noise (Random Spheres)",
+                "3D Shape/Mandelbulb",
+                "3D Shape/Menger Sponge"
+            ],
+            "categories": []
+        },
+        {
+            "id": "Gradients",
+            "nodes": [
+                "Greyscale/Gradient Angular",
+                "Greyscale/Gradient Bottom-Top",
+                "Greyscale/Gradient Left-Right",
+                "Greyscale/Gradient Radial",
+                "Image Modifier (Post Process)/Color Ramp",
+                "Shape Renderer/Gradient",
+                "Shape Renderer/Distance"
+            ],
+            "categories": []
+        },
+        {
+            "id": "Color correction",
+            "nodes": [
+                "Image Modifier (Post Process)/Bichrome",
+                "Image Modifier (Post Process)/Black & White",
+                "Image Modifier (Post Process)/Color Ramp",
+                "Image Modifier (Post Process)/Filter Tone",
+                "Image Modifier (Post Process)/HSL Adjustments",
+                "Image Modifier (Post Process)/Invert (Color)",
+                "Image Modifier (Post Process)/Invert (Greyscale)",
+                "Image Modifier (Post Process)/Monochrome",
+                "Image Modifier (Post Process)/Posterize (Steps)",
+                "Image Modifier (Post Process)/Sepia",
+                "Image Modifier (Post Process)/Threshold",
+                "Image Modifier (Post Process)/Threshold Smooth",
+                "Image Modifier (Post Process)/Tint Shadows and Highlights",
+                "Image/Color HSL",
+                "Image/Color RGBA",
+                "Image/Color From R,G,B,A",
+                "Greyscale/Get Red",
+                "Greyscale/Get Green",
+                "Greyscale/Get Blue",
+                "Greyscale/Get Hue",
+                "Greyscale/Get Saturation",
+                "Greyscale/Get Lightness"
+            ],
+            "categories": []
+        },
+        {
+            "id": "Blur and sharpness",
+            "nodes": [
+                "Image Modifier (Post Process)/Blur",
+                "Image Modifier (Post Process)/Sharpen",
+                "2D Modifier/Dithered Blur",
+                "Shape Renderer/Feather",
+                "Shape Renderer/Glow"
+            ],
+            "categories": []
+        },
+        {
+            "id": "Stylize and effects",
+            "nodes": [
+                "Image Modifier (Post Process)/Chromatic Aberration",
+                "Image Modifier (Post Process)/Dithering",
+                "Image Modifier (Post Process)/Film Grain",
+                "Image Modifier (Post Process)/Flare",
+                "Image Modifier (Post Process)/Glitch",
+                "Image Modifier (Post Process)/Glow",
+                "Image Modifier (Post Process)/RGB Split",
+                "Image Modifier (Post Process)/Vignetting",
+                "Image Modifier (Post Process)/Fractalize",
+                "Greyscale Modifier/Adaptive Halftone",
+                "Greyscale Modifier/Greyscale Halftone",
+                "Greyscale Modifier/Stippling",
+                "Greyscale Modifier/Dithering",
+                "Greyscale Modifier/Posterize (Steps)"
+            ],
+            "categories": []
+        },
+        {
+            "id": "Distort",
+            "nodes": [
+                "2D Modifier/Circular Inversion",
+                "2D Modifier/Displacement Map",
+                "2D Modifier/Distortion Map",
+                "2D Modifier/Distortion bulging",
+                "2D Modifier/Drop",
+                "2D Modifier/Fisheye",
+                "2D Modifier/Joukovsky Transform",
+                "2D Modifier/Liquid Warp",
+                "2D Modifier/Map on Disk",
+                "2D Modifier/Mobius Transform",
+                "2D Modifier/Perspective Warp",
+                "2D Modifier/Screen Shake",
+                "3D Shape Modifier/Bend",
+                "3D Shape Modifier/Twist",
+                "3D Shape Modifier/Noise",
+                "Curve Modifier/Add Displacement",
+                "Curve Modifier/2D Modifier on Curve",
+                "Miscellaneous/Make Displacement Map",
+                "3D Shape Blend/Displace"
+            ],
+            "categories": []
+        },
+        {
+            "id": "Move, rotate, scale",
+            "nodes": [
+                "2D Modifier/Translate",
+                "2D Modifier/Rotate",
+                "2D Modifier/Scale",
+                "2D Modifier/Zoom",
+                "2D Modifier/Skew",
+                "2D Modifier/Flip",
+                "2D Modifier/Disable 2D Camera",
+                "3D Shape Modifier/Translate",
+                "3D Shape Modifier/Rotate",
+                "3D Shape Modifier/Scale",
+                "3D Shape Modifier/Elongate"
+            ],
+            "categories": []
+        },
+        {
+            "id": "Repeat and symmetry",
+            "nodes": [
+                "2D Modifier/Repeat",
+                "2D Modifier/Grid",
+                "2D Modifier/Hexagonal Grid",
+                "2D Modifier/Kaleidoscope",
+                "2D Modifier/Mirror Repeat",
+                "2D Modifier/Mirror Repeat in Circle",
+                "2D Modifier/Star Symmetry",
+                "2D Modifier/Symmetry (Mirror)",
+                "2D Modifier/Mosaic",
+                "Shape Modifier/Join N Times",
+                "Shape Modifier/Rings",
+                "3D Shape Modifier/Repeat",
+                "3D Shape Modifier/Repeat Infinitely",
+                "3D Shape Modifier/Repeat Polar",
+                "3D Shape Modifier/Symmetry X",
+                "3D Shape Modifier/Symmetry Y",
+                "3D Shape Modifier/Symmetry Z",
+                "3D Shape Modifier/Menger Fractal",
+                "Image Modifier (Post Process)/Render N Times",
+                "Image Modifier (Post Process)/Wrap (Mod)",
+                "Greyscale Modifier/Wrap (Mod)"
+            ],
+            "categories": []
+        },
+        {
+            "id": "Edit a shape",
+            "nodes": [],
+            "categories": [
+                "Shape Modifier",
+                "3D Shape Modifier",
+                "Curve Modifier"
+            ]
+        },
+        {
+            "id": "Combine shapes",
+            "nodes": [],
+            "categories": [
+                "Shape Blend",
+                "3D Shape Blend",
+                "Curve Blend"
+            ]
+        },
+        {
+            "id": "Draw a shape or curve",
+            "nodes": [
+                "Shape Modifier/Outline"
+            ],
+            "categories": [
+                "Shape Renderer",
+                "Curve Renderer",
+                "3D Shape Renderer"
+            ]
+        },
+        {
+            "id": "Make 3D from 2D",
+            "nodes": [],
+            "categories": [
+                "3D Shape from 2D"
+            ]
+        },
+        {
+            "id": "Blend images",
+            "nodes": [],
+            "categories": [
+                "Image Blend",
+                "Greyscale Blend"
+            ]
+        },
+        {
+            "id": "Masks and transparency",
+            "nodes": [
+                "Image Modifier (Post Process)/Mask Image",
+                "Image Modifier (Post Process)/Set Opacity (Alpha)",
+                "Image Modifier (Post Process)/Get Opacity (Alpha)",
+                "Image Modifier (Post Process)/Chroma Keying (Green Screen)",
+                "Greyscale/Get Alpha (Opacity)",
+                "Shape/Mask to Shape",
+                "Shape/Function to Shape"
+            ],
+            "categories": []
+        },
+        {
+            "id": "Video, camera and external sources",
+            "nodes": [
+                "Image/Image",
+                "Image/Video",
+                "Image/Webcam",
+                "Image/Spout Syphon IN",
+                "Image/Feedback (One frame delay)",
+                "Image Modifier (Post Process)/Caching"
+            ],
+            "categories": []
+        },
+        {
+            "id": "Animation and time",
+            "nodes": [
+                "Input/Time",
+                "2D Modifier/Screen Shake",
+                "Greyscale Modifier/Sine Wave",
+                "Greyscale Modifier/Square Wave",
+                "Image Blend/Multi-Select with Transition",
+                "Image Blend/Select Randomly"
+            ],
+            "categories": []
+        },
+        {
+            "id": "Audio, MIDI and OSC",
+            "nodes": [
+                "Input/Midi",
+                "Input/OSC",
+                "Input/Spectrum (Audio)",
+                "Input/Volume (Audio)",
+                "Input/Waveform (Audio)",
+                "Input/Last MIDI button pressed",
+                "Input/Last last MIDI button pressed",
+                "Input/Time since last MIDI button pressed",
+                "Image Blend/MIDI Multi-Select",
+                "Image Blend/MIDI Multi-Select with Transition"
+            ],
+            "categories": []
+        },
+        {
+            "id": "Switch between variants",
+            "nodes": [
+                "Image Blend/Multi-Select",
+                "Image Blend/Multi-Select with Transition",
+                "Image Blend/MIDI Multi-Select",
+                "Image Blend/MIDI Multi-Select with Transition",
+                "Image Blend/Select",
+                "Image Blend/Select Randomly",
+                "Image Blend/Switcher",
+                "Greyscale Blend/Multi-Select",
+                "Greyscale Blend/Select"
+            ],
+            "categories": []
+        },
+        {
+            "id": "Math",
+            "nodes": [],
+            "categories": [
+                "Greyscale Modifier",
+                "Greyscale Blend",
+                "Boolean operations",
+                "Miscellaneous"
+            ]
+        },
+        {
+            "id": "Values and parameters",
+            "nodes": [],
+            "categories": [
+                "Input"
+            ]
+        },
+        {
+            "id": "Particles",
+            "nodes": [],
+            "categories": [
+                "Particle 2D Initializer",
+                "Particle 2D Force",
+                "Particle 2D Set Attribute",
+                "Particle 2D Get Attribute",
+                "Particle 3D Initializer",
+                "Particle 3D Force",
+                "Particle 3D Set Attribute",
+                "Particle 3D Get Attribute",
+                "Force Field"
+            ]
+        }
+    ]
+}

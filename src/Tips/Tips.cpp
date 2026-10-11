@@ -1,11 +1,57 @@
 #include "Tips.h"
+#include "Cool/i18n/i18n.hpp"
 #include "Cool/ImGui/IcoMoonCodepoints.h"
 #include "Cool/Input/CTRL_OR_CMD.hpp"
 
 namespace Lab {
 
+static auto all_tips_russian() -> Cool::Tips
+{
+    static constexpr auto tips = std::array{
+        "Наши [видеоуроки на YouTube](https://youtu.be/FK1sMPgcE4Q?list=PLuMMMaL5kN3mG6fSeSYTqC-sc_OTX3unQ) помогут начать работу с Coollab.",
+        "Ноды можно скопировать (" CTRL_OR_CMD "+C) и отправить другу как текст, а он вставит их в свой Coollab (" CTRL_OR_CMD "+V). Так же можно переносить ноды между своими проектами.",
+        "Цветовую тему можно сменить в меню \" " ICOMOON_COG "Настройки\", и даже создать свою!",
+        "Нажмите " CTRL_OR_CMD "+E, чтобы быстро экспортировать изображение с текущими настройками экспорта.",
+        "Нажмите F в окне \" " ICOMOON_TREE "Ноды\", чтобы показать все ноды целиком.",
+        CTRL_OR_CMD "+клик по слайдеру позволяет ввести значение вручную (и даже выйти за пределы слайдера!).",
+        "В виджете угла или направления зажмите SHIFT, чтобы привязываться к точным углам.",
+        "Зажмите ALT при прокрутке колёсика в окне \" " ICOMOON_IMAGE "Просмотр\", чтобы масштабировать относительно центра, а не курсора.",
+        "Чтобы повернуть 2D-камеру, зажмите SHIFT и прокрутите колёсико мыши над окном \" " ICOMOON_IMAGE "Просмотр\".",
+        "Щёлкните правой кнопкой по виджету, чтобы изменить его настройки (диапазон слайдера и т.п.).",
+        "Если вам понравились найденные параметры ноды, сохраните их как пресет. Эта возможность находится внизу окна \" " ICOMOON_EQUALIZER "Инспектор\", когда выбрана нода.",
+        "При копировании нод зажмите SHIFT, чтобы скопировать и входящие связи, даже если они идут от нод, которые не копируются.",
+        "История отмены (" CTRL_OR_CMD "+Z / " CTRL_OR_CMD "+Y) сохраняется даже после перезапуска Coollab! Её размер настраивается в меню \" " ICOMOON_COG "Настройки\".",
+        "Нажмите ESCAPE, чтобы закрыть эти окна.",
+
+        // Bonus ImGui tips
+        "Перетащите кнопку меню окна (стрелка в правом верхнем углу), чтобы переместить сразу все вкладки.",
+        "Зажмите SHIFT, чтобы отключить прикрепление окон. Удобно, когда вы двигаете окно, а оно всё время пристыковывается.",
+        "Дважды щёлкните по правому нижнему углу плавающего окна, чтобы подогнать его размер под содержимое.",
+        "TAB и SHIFT+TAB переключают между полями ввода в окне.",
+        R"STR(Несколько полезных сочетаний клавиш:
+  * При вводе текста:
+    * )STR" CTRL_OR_CMD R"STR(+Влево/Вправо — переход по словам.
+    * )STR" CTRL_OR_CMD R"STR(+A или двойной клик — выделить всё.
+    * )STR" CTRL_OR_CMD R"STR(+X/C/V — вырезать/копировать/вставить.
+    * )STR" CTRL_OR_CMD R"STR(+Z, )STR" CTRL_OR_CMD R"STR(+Y — отменить/повторить.
+    * ESCAPE — отменить ввод.
+  * Навигация с клавиатуры:
+    * )STR" CTRL_OR_CMD R"STR(+TAB — выбрать окно.
+    * Стрелки — перемещение внутри окна.
+    * ENTER — активировать виджет.
+    * ESCAPE — деактивировать виджет, закрыть всплывающее окно, выйти из вложенного окна.
+    * ALT — перейти в меню окна.
+)STR",
+    };
+
+    return tips;
+}
+
 auto all_tips() -> Cool::Tips
 {
+    if (Cool::i18n::current_language() == Cool::i18n::Language::Russian)
+        return all_tips_russian();
+
     static constexpr auto tips = std::array{
         "Our [Youtube tutorials](https://youtu.be/FK1sMPgcE4Q?list=PLuMMMaL5kN3mG6fSeSYTqC-sc_OTX3unQ) can help you get started with Coollab.",
         "You can copy your nodes (" CTRL_OR_CMD "+C) and send them as text to a friend, who can then paste them in their instance of Coollab (" CTRL_OR_CMD "+V). You can also paste them in another project of yours.",

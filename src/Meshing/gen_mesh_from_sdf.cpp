@@ -1,3 +1,4 @@
+#include "Cool/i18n/i18n.hpp"
 #include "gen_mesh_from_sdf.hpp"
 #include "Cool/Gpu/OpenGL/ComputeShader.h"
 #include "Cool/Gpu/OpenGL/SSBO.h"
@@ -95,8 +96,8 @@ auto gen_mesh_from_sdf(
     {
         ImGuiNotify::send({
             .type    = ImGuiNotify::Type::Warning,
-            .title   = "3D Model Export",
-            .content = "OpenGL version is lower than 430. Meshing need compute shaders, which are not supported by this version.",
+            .title   = Cool::tr("3D Model Export"),
+            .content = Cool::tr("OpenGL version is lower than 430. Meshing need compute shaders, which are not supported by this version."),
         });
         return std::nullopt;
     }
@@ -112,7 +113,7 @@ auto gen_mesh_from_sdf(
     {
         ImGuiNotify::send({
             .type    = ImGuiNotify::Type::Error,
-            .title   = "3D Model Export",
+            .title   = Cool::tr("3D Model Export"),
             .content = fmt::format("Unable to generate the shader code:\n{}", shader_code.error()),
         });
         return std::nullopt;
@@ -125,7 +126,7 @@ auto gen_mesh_from_sdf(
         assert(meshing_compute_shader.error().clipboard_contents.empty() && "Ignoring some clipboard contents");
         ImGuiNotify::send({
             .type    = ImGuiNotify::Type::Error,
-            .title   = "3D Model Export",
+            .title   = Cool::tr("3D Model Export"),
             .content = fmt::format("Unable to compile the compute shader:\n{}", meshing_compute_shader.error().message),
         });
         return std::nullopt;

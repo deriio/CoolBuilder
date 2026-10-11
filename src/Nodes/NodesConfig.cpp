@@ -1,4 +1,5 @@
 #include "NodesConfig.h"
+#include "Cool/i18n/i18n.hpp"
 #include <Commands/Command_AddLink.h>
 #include <Commands/Command_AddNode.h>
 #include <Commands/Command_ChangeNodeDefinition.h>
@@ -152,7 +153,7 @@ static void apply_settings_to_inputs_no_history(
 
 void NodesConfig::node_context_menu(Cool::Node& /*Node*/, Cool::NodeId const& /* node_id */)
 {
-    // if (ImGui::Button("Meshing"))
+    // if (ImGui::Button(Cool::i18n::label("Meshing").c_str()))
     // {
     //     _command_executor.execute(Command_Meshing{node_id});
     //     ImGui::CloseCurrentPopup();
@@ -174,7 +175,7 @@ auto NodesConfig::category_name(Cool::Node const& abstract_node) const -> std::s
 void NodesConfig::main_node_toggle(Cool::NodeId const& node_id)
 {
     bool is_main = node_id == _main_node_id;
-    if (Cool::ImGuiExtras::toggle("Main node", &is_main))
+    if (Cool::ImGuiExtras::toggle(Cool::i18n::label("Main node").c_str(), &is_main))
         set_main_node_id(node_id);
 }
 
@@ -209,17 +210,17 @@ void NodesConfig::imgui_in_inspector_below_node_info(Cool::Node& abstract_node, 
     {
         if (Cool::ImGuiExtras::button_with_text_icon(ICOMOON_COG))
             _audio_manager.open_imgui_window();
-        ImGui::SetItemTooltip("%s", "Open audio config to select which audio file to play, or which input device (e.g. microphone) to use.");
+        ImGui::SetItemTooltip("%s", Cool::tr("Open audio config to select which audio file to play, or which input device (e.g. microphone) to use."));
     }
 
     if (node.particles_count().has_value())
-        ImGui::DragScalar("Particles Count", ImGuiDataType_U64, &node.particles_count().value());
+        ImGui::DragScalar(Cool::i18n::label("Particles Count").c_str(), ImGuiDataType_U64, &node.particles_count().value());
 
     for (size_t i = 0; i < node.value_inputs().size(); ++i)
     {
         Cool::ImGuiExtras::disabled_if(
             value_input_is_connected_to_a_node(i, node, graph()),
-            "This value is connected to a node in the graph, you cannot edit it here.", [&]() {
+            Cool::tr("This value is connected to a node in the graph, you cannot edit it here."), [&]() {
                 _ui.widget(node.value_inputs()[i]);
             }
         );
@@ -230,12 +231,12 @@ void NodesConfig::imgui_in_inspector_below_node_info(Cool::Node& abstract_node, 
     {
         ImGui::NewLine();
         ImGui::Separator();
-        Cool::ImGuiExtras::warning_text("Node file not found");
+        Cool::ImGuiExtras::warning_text(Cool::tr("Node file not found"));
     }
     else if (!node.value_inputs().empty())
     {
         ImGui::NewLine();
-        ImGui::SeparatorText("Presets");
+        ImGui::SeparatorText(Cool::tr("Presets"));
         // Get the variables from the inputs
         auto settings = settings_from_inputs(node.value_inputs());
         // Apply
@@ -254,7 +255,7 @@ void NodesConfig::imgui_inspector_content_when_no_node_is_selected()
     if (_nodes_editor.graph().nodes().is_empty())
     {
         ImGui::PushFont(Cool::Font::italic());
-        ImGui::TextUnformatted("Select a node to edit its parameters");
+        ImGui::TextUnformatted(Cool::tr("Select a node to edit its parameters"));
         ImGui::PopFont();
     }
     else
@@ -734,6 +735,144 @@ auto NodesConfig::maybe_disable_node_definition() const -> Cool::MaybeDisableNod
         return std::nullopt;
     };
 #endif
+}
+
+namespace {
+
+enum class Match : uint8_t {
+    None,
+    WithConversion,
+    Exact,
+};
+
+/// Conversions between color spaces (or between greyscale types) are so common that we don't consider them as real conversions.
+auto same_kind(PrimitiveType a, PrimitiveType b) -> bool
+{
+    return a == b
+           || (is_color_type(a) && is_color_type(b))
+           || (is_greyscale_type(a) && is_greyscale_type(b));
+}
+
+auto convertible(PrimitiveType from, PrimitiveType to) -> bool
+{
+    return from == to || can_convert(from, to);
+}
+
+/// What a pin of a node will accept being plugged into it.
+struct AcceptedFunction {
+    enum class Kind : uint8_t {
+        MainInput,     // `node_signature` is the signature of the node that owns the pin
+        FunctionInput, // `node_signature` is the signature of the function expected by the pin
+    };
+    Kind              kind;
+    FunctionSignature node_signature;
+};
+
+auto match(FunctionSignature provided, AcceptedFunction accepted) -> Match
+{
+    auto const& expected = accepted.node_signature;
+    if (accepted.kind == AcceptedFunction::Kind::FunctionInput)
+    {
+        if (provided.arity == expected.arity && same_kind(provided.from, expected.from) && same_kind(provided.to, expected.to))
+            return Match::Exact;
+        if (provided.arity == expected.arity
+            && convertible(expected.from, provided.from)
+            && convertible(provided.to, expected.to))
+        {
+            return Match::WithConversion;
+        }
+        // Curves and 3D shapes get rendered automatically when they are plugged into a 2D input
+        if ((is_curve(provided) || is_shape_3D(provided) || is_curve_3D(provided)) && expected.from == PrimitiveType::UV)
+            return Match::WithConversion;
+        return Match::None;
+    }
+
+    // Main input: the node will process the output of the function that is plugged in
+    // 2D modifiers (UV -> UV) apply to anything that is defined on the 2D plane
+    if (expected.from == PrimitiveType::UV && expected.to == PrimitiveType::UV)
+        return provided.from == PrimitiveType::UV ? Match::Exact : Match::None;
+    if (same_kind(provided.to, expected.from))
+        return Match::Exact;
+    if (convertible(provided.to, expected.from))
+        return Match::WithConversion;
+    if ((is_curve(provided) || is_curve_3D(provided)) && expected.from == PrimitiveType::SignedDistance)
+        return Match::WithConversion; // Curves can be rendered as shapes
+    return Match::None;
+}
+
+/// Finds the best input pin of `def` to plug a function with the given signature into.
+auto best_input_pin(FunctionSignature provided, NodeDefinition const& def) -> std::optional<Cool::NodeCompatibility>
+{
+    // Must match the pins created in make_node()
+    auto const number_of_main_input_pins = doesnt_need_main_pin(def.signature()) ? 0 : def.signature().arity;
+
+    auto best = std::optional<Cool::NodeCompatibility>{};
+    auto const consider = [&](Match m, size_t pin_index) {
+        if (m == Match::None)
+            return false;
+        bool const needs_conversion = m == Match::WithConversion;
+        if (!best || (best->needs_conversion && !needs_conversion))
+            best = Cool::NodeCompatibility{.pin_index = pin_index, .needs_conversion = needs_conversion};
+        return !needs_conversion; // Stop searching once we found an exact match
+    };
+
+    for (size_t i = 0; i < number_of_main_input_pins; ++i)
+    {
+        if (consider(match(provided, {AcceptedFunction::Kind::MainInput, def.signature()}), i))
+            return best;
+    }
+    for (size_t i = 0; i < def.function_inputs().size(); ++i)
+    {
+        if (consider(match(provided, {AcceptedFunction::Kind::FunctionInput, def.function_inputs()[i].signature()}), number_of_main_input_pins + i))
+            return best;
+    }
+    return best;
+}
+
+} // namespace
+
+auto NodesConfig::check_node_compatibility(Cool::Pin const& pin) const -> Cool::CheckNodeCompatibility
+{
+    auto const* node = graph().try_get_node<Node>(graph().find_node_containing_pin(pin.id()));
+    if (!node)
+        return {};
+    auto const* node_def = _get_node_definition(node->id_names());
+    if (!node_def)
+        return {};
+
+    if (pin.kind() == Cool::PinKind::Output)
+    {
+        // Only the main output pin carries the node's function. The other ones are indices generated by the node, we don't filter for them.
+        if (node->output_pins().empty() || node->output_pins()[0].id() != pin.id())
+            return {};
+
+        auto const provided = node_def->signature();
+        return [provided](Cool::NodeDefinition const& abstract_def, Cool::NodesCategory const&) -> std::optional<Cool::NodeCompatibility> {
+            return best_input_pin(provided, abstract_def.downcast<NodeDefinition>());
+        };
+    }
+
+    // Dragging backward from an input pin: the new node's main output will be plugged into it
+    auto const& input_pins = node->input_pins();
+    auto const  it         = std::find_if(input_pins.begin(), input_pins.end(), [&](Cool::InputPin const& p) { return p.id() == pin.id(); });
+    if (it == input_pins.end())
+        return {};
+    auto const pin_index = static_cast<size_t>(std::distance(input_pins.begin(), it));
+
+    auto accepted = AcceptedFunction{};
+    if (pin_index < node->main_input_pin_idx_end())
+        accepted = {AcceptedFunction::Kind::MainInput, node_def->signature()};
+    else if (pin_index < node->function_input_pin_idx_end())
+        accepted = {AcceptedFunction::Kind::FunctionInput, node_def->function_inputs()[pin_index - node->function_input_pin_idx_begin()].signature()};
+    else
+        return {}; // Value inputs accept lots of different things, we don't filter them
+
+    return [accepted](Cool::NodeDefinition const& abstract_def, Cool::NodesCategory const&) -> std::optional<Cool::NodeCompatibility> {
+        auto const m = match(abstract_def.downcast<NodeDefinition>().signature(), accepted);
+        if (m == Match::None)
+            return std::nullopt;
+        return Cool::NodeCompatibility{.pin_index = 0, .needs_conversion = m == Match::WithConversion};
+    };
 }
 
 } // namespace Lab

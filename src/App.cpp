@@ -1,3 +1,4 @@
+#include "Cool/i18n/i18n.hpp"
 #include "App.h"
 #include <filesystem>
 #include "CommandCore/command_to_string.h"
@@ -302,7 +303,7 @@ void App::imgui_window_cameras()
     if (ImGui::BeginTabBar("##cameras"))
     {
         ImGui::PushFont(Cool::Font::bold());
-        if (ImGui::BeginTabItem(Cool::icon_fmt("2D Camera", ICOMOON_CAMERA).c_str(), nullptr, project().camera_2D_manager.is_editable_in_view() ? ImGuiTabItemFlags_SetSelected : 0))
+        if (ImGui::BeginTabItem(Cool::icon_fmt(Cool::tr("2D Camera"), ICOMOON_CAMERA).c_str(), nullptr, project().camera_2D_manager.is_editable_in_view() ? ImGuiTabItemFlags_SetSelected : 0))
         {
             ImGui::PopFont();
             if (ImGui::IsItemActive())
@@ -319,7 +320,7 @@ void App::imgui_window_cameras()
         }
 
         ImGui::PushFont(Cool::Font::bold());
-        if (ImGui::BeginTabItem(Cool::icon_fmt("3D Camera", ICOMOON_VIDEO_CAMERA).c_str(), nullptr, project().camera_3D_manager.is_editable_in_view() ? ImGuiTabItemFlags_SetSelected : 0))
+        if (ImGui::BeginTabItem(Cool::icon_fmt(Cool::tr("3D Camera"), ICOMOON_VIDEO_CAMERA).c_str(), nullptr, project().camera_3D_manager.is_editable_in_view() ? ImGuiTabItemFlags_SetSelected : 0))
         {
             ImGui::PopFont();
             if (ImGui::IsItemActive())
@@ -342,10 +343,10 @@ void App::imgui_window_view()
 {
     if (_project_manager.is_in_safe_mode())
     {
-        ImGui::Begin(Cool::icon_fmt("Crash", ICOMOON_LIFEBUOY).c_str());
-        Cool::ImGuiExtras::warning_text("Safe Mode");
-        Cool::ImGuiExtras::markdown("Rendering is disabled because the project crashed last time. Undo your recent changes to the nodes patch, and once you think it shouldn't crash anymore press \"Go!\"");
-        if (ImGui::Button("Go!"))
+        ImGui::Begin(Cool::i18n::window_title(Cool::icon_fmt("Crash", ICOMOON_LIFEBUOY)).c_str());
+        Cool::ImGuiExtras::warning_text(Cool::tr("Safe Mode"));
+        Cool::ImGuiExtras::markdown(Cool::tr("Rendering is disabled because the project crashed last time. Undo your recent changes to the nodes patch, and once you think it shouldn't crash anymore press \"Go!\""));
+        if (ImGui::Button(Cool::i18n::label("Go!").c_str()))
             _project_manager.exit_safe_mode();
         ImGui::End();
     }
@@ -384,7 +385,7 @@ void App::imgui_window_view()
                 reset_cameras();
             }
             b |= ImGui::IsItemActive();
-            ImGui::SetItemTooltip("%s", "Reset 2D and 3D cameras");
+            ImGui::SetItemTooltip("%s", Cool::tr("Reset 2D and 3D cameras"));
 
             // Toggle fullscreen
             if (Cool::ImGuiExtras::floating_button(_wants_view_in_fullscreen ? ICOMOON_SHRINK : ICOMOON_ENLARGE, buttons_order++, align_buttons_vertically))
@@ -393,7 +394,7 @@ void App::imgui_window_view()
                 _main_window.set_fullscreen(_wants_view_in_fullscreen);
             }
             b |= ImGui::IsItemActive();
-            ImGui::SetItemTooltip("%s", _wants_view_in_fullscreen ? "Shrink the view" : "Expand the view");
+            ImGui::SetItemTooltip("%s", _wants_view_in_fullscreen ? Cool::tr("Shrink the view") : Cool::tr("Expand the view"));
 
             // Toggle 2D / 3D cameras
             if (Cool::ImGuiExtras::floating_button(project().camera_2D_manager.is_editable_in_view() ? ICOMOON_CAMERA : ICOMOON_VIDEO_CAMERA, buttons_order++, align_buttons_vertically))
@@ -407,7 +408,7 @@ void App::imgui_window_view()
             // Aspect Ratio
             if (Cool::ImGuiExtras::floating_button(ICOMOON_CROP, buttons_order++, align_buttons_vertically))
                 ImGui::OpenPopup("##Aspect Ratio");
-            ImGui::SetItemTooltip("%s", "Aspect Ratio");
+            ImGui::SetItemTooltip("%s", Cool::tr("Aspect Ratio"));
             if (ImGui::BeginPopup("##Aspect Ratio"))
             {
                 project().view_constraint.imgui_aspect_ratio();
@@ -463,7 +464,7 @@ void App::imgui_window_exporter()
         .on_video_export_start                      = [&]() { on_time_reset(); },
         .widgets_in_window_video_export_in_progress = [&]() {
             ImGui::NewLine();
-            ImGui::SeparatorText(Cool::icon_fmt("Did you know?", ICOMOON_BUBBLE).c_str());
+            ImGui::SeparatorText(Cool::icon_fmt(Cool::tr("Did you know?"), ICOMOON_BUBBLE).c_str());
             _tips_manager.imgui_show_one_tip(all_tips());
             //
         },
@@ -484,7 +485,7 @@ void App::imgui_window_license()
 {
     if (_license_window_is_open)
     {
-        ImGui::Begin(Cool::icon_fmt("License", ICOMOON_FILE_TEXT).c_str(), &_license_window_is_open);
+        ImGui::Begin(Cool::i18n::window_title(Cool::icon_fmt("License", ICOMOON_FILE_TEXT)).c_str(), &_license_window_is_open);
         static auto license_text = Cool::File::to_string(Cool::Path::root() / "LICENSE.txt");
         if (license_text.has_value())
             ImGui::TextUnformatted(license_text->c_str());
@@ -509,7 +510,7 @@ void App::imgui_windows_only_when_inputs_are_allowed()
 
     auto const the_ui = ui();
     // Time
-    ImGui::Begin(Cool::icon_fmt("Time", ICOMOON_STOPWATCH).c_str());
+    ImGui::Begin(Cool::i18n::window_title(Cool::icon_fmt("Time", ICOMOON_STOPWATCH)).c_str());
     Cool::ClockU::imgui_timeline(
         project().clock,
         /* extra_widgets = */ [&]() {
@@ -554,13 +555,13 @@ void App::imgui_windows_only_when_inputs_are_allowed()
     }
 
     DebugOptions::test_shaders_compilation__window([&]() {
-        if (ImGui::Button("Compile everything"))
+        if (ImGui::Button(Cool::i18n::label("Compile everything").c_str()))
         {
             Cool::message_console().clear();
             compile_all_is0_nodes();
         }
         ImGui::Separator();
-        if (ImGui::Button("Compile all is0 Nodes"))
+        if (ImGui::Button(Cool::i18n::label("Compile all is0 Nodes").c_str()))
         {
             Cool::message_console().clear();
             compile_all_is0_nodes();
@@ -586,18 +587,18 @@ void App::save_as()
 
 void App::file_menu()
 {
-    if (ImGui::BeginMenu(Cool::icon_fmt("File", ICOMOON_FILE_TEXT2, true).c_str()))
+    if (ImGui::BeginMenu(Cool::icon_fmt(Cool::tr("File"), ICOMOON_FILE_TEXT2, true).c_str()))
     {
         auto const ctx = command_execution_context();
-        if (ImGui::MenuItem("Save", ctrl_or_cmd "+S"))
+        if (ImGui::MenuItem(Cool::i18n::label("Save").c_str(), ctrl_or_cmd "+S"))
             ctx.execute(Command_SaveProject{.is_autosave = false, .must_absolutely_succeed = false});
-        if (ImGui::MenuItem("Save As", ctrl_or_cmd "+Shift+S"))
+        if (ImGui::MenuItem(Cool::i18n::label("Save As").c_str(), ctrl_or_cmd "+Shift+S"))
         {
             save_as();
         }
         if (DebugOptions::allow_user_to_open_any_file())
         {
-            if (ImGui::MenuItem("Open", ctrl_or_cmd "+O"))
+            if (ImGui::MenuItem(Cool::i18n::label("Open").c_str(), ctrl_or_cmd "+O"))
             {
                 auto const path = _project_manager.file_dialog_to_open_project();
                 if (path)
@@ -610,7 +611,7 @@ void App::file_menu()
 
 void App::performance_menu()
 {
-    if (ImGui::BeginMenu(Cool::icon_fmt("Performance", ICOMOON_POWER, true).c_str()))
+    if (ImGui::BeginMenu(Cool::icon_fmt(Cool::tr("Performance"), ICOMOON_POWER, true).c_str()))
     {
         project().view_constraint.imgui_nb_pixels();
         ImGui::EndMenu();
@@ -619,7 +620,7 @@ void App::performance_menu()
 
 // void App::windows_menu()
 // {
-//     if (ImGui::BeginMenu("Windows"))
+//     if (ImGui::BeginMenu(Cool::i18n::label("Windows").c_str()))
 //     {
 //         for (auto& view : _views)
 //         {
@@ -631,7 +632,7 @@ void App::performance_menu()
 
 void App::export_menu()
 {
-    if (ImGui::BeginMenu(Cool::icon_fmt("Export", ICOMOON_UPLOAD2, true).c_str()))
+    if (ImGui::BeginMenu(Cool::icon_fmt(Cool::tr("Export"), ICOMOON_UPLOAD2, true).c_str()))
     {
         ImGui::PushStyleVar(ImGuiStyleVar_ButtonTextAlign, ImVec2{0.f, 0.5f});
         project().exporter.imgui_menu_items(
@@ -639,7 +640,7 @@ void App::export_menu()
                 .open_image_exporter = [&]() { command_executor().execute(Command_OpenImageExporter{}); },
                 .open_video_exporter = [&]() { command_executor().execute(Command_OpenVideoExporter{}); },
             },
-            Cool::icon_fmt("Share online", ICOMOON_EARTH, true)
+            Cool::icon_fmt(Cool::tr("Share online"), ICOMOON_EARTH, true)
         );
         _gallery_publisher.imgui_open_sharing_form();
         ImGui::PopStyleVar();
@@ -649,13 +650,13 @@ void App::export_menu()
 
 void App::settings_menu()
 {
-    if (ImGui::BeginMenu(Cool::icon_fmt("Settings", ICOMOON_COG, true).c_str()))
+    if (ImGui::BeginMenu(Cool::icon_fmt(Cool::tr("Settings"), ICOMOON_COG, true).c_str()))
     {
-        Cool::ImGuiExtras::separator_text("History");
+        Cool::ImGuiExtras::separator_text(Cool::tr("History"));
         project().history.imgui_max_size(&Cool::ImGuiExtras::help_marker);
         project().history.imgui_max_saved_size(&Cool::ImGuiExtras::help_marker);
 
-        Cool::ImGuiExtras::separator_text("Color Theme");
+        Cool::ImGuiExtras::separator_text(Cool::tr("Color Theme"));
         Cool::color_themes()->imgui_theme_picker();
 
         Cool::user_settings().imgui();
@@ -668,7 +669,7 @@ void App::settings_menu()
 
 void App::commands_menu()
 {
-    if (ImGui::BeginMenu(Cool::icon_fmt("Commands", ICOMOON_ROCKET, true).c_str()))
+    if (ImGui::BeginMenu(Cool::icon_fmt(Cool::tr("Commands"), ICOMOON_ROCKET, true).c_str()))
     {
         if (ImGui::Selectable(ICOMOON_BUBBLE " Show all the tips"))
             _tips_manager.open_all_tips_window();
@@ -698,7 +699,7 @@ void App::commands_menu()
 
 void App::debug_menu()
 {
-    if (ImGui::BeginMenu("Debug"))
+    if (ImGui::BeginMenu(Cool::i18n::label("Debug").c_str()))
     {
         DebugOptionsManager::imgui_ui_for_all_options();
         ImGui::EndMenu();
@@ -707,12 +708,12 @@ void App::debug_menu()
 
 void App::about_menu()
 {
-    if (ImGui::BeginMenu("About"))
+    if (ImGui::BeginMenu(Cool::i18n::label("About").c_str()))
     {
-        if (ImGui::Button("Website"))
+        if (ImGui::Button(Cool::i18n::label("Website").c_str()))
             Cool::open_link("https://coollab-art.com/");
-        ImGui::SetItemTooltip("%s", "https://coollab-art.com/");
-        if (ImGui::Button("License"))
+        ImGui::SetItemTooltip("%s", Cool::tr("https://coollab-art.com/"));
+        if (ImGui::Button(Cool::i18n::label("License").c_str()))
             _license_window_is_open = true;
 
         ImGui::EndMenu();
