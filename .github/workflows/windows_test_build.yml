@@ -1,0 +1,64 @@
+name: Windows test build
+
+# Builds Coollab for Windows from the development branch and publishes it as a pre-release named "test-build",
+# so that it can be downloaded and tried without compiling anything.
+on:
+  push:
+    branches: [claude/vigilant-meitner-lddo5h]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Set up MSVC
+        uses: ilammy/msvc-dev-cmd@v1.13.0
+
+      - name: Cache vcpkg
+        uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/vcpkg
+          key: vcpkg-test-${{ runner.os }}-${{ hashFiles('**/vcpkg.json') }}
+
+      - name: Install vcpkg and OpenSSL
+        shell: cmd
+        run: |
+          if not exist "${{ runner.temp }}\vcpkg" (
+            git clone https://github.com/microsoft/vcpkg.git ${{ runner.temp }}\vcpkg
+            cd ${{ runner.temp }}\vcpkg
+            .\bootstrap-vcpkg.bat
+          )
+          ${{ runner.temp }}\vcpkg\vcpkg.exe install openssl:x64-windows-static
+
+      - name: ccache
+        uses: hendrikmuhs/ccache-action@main
+        with:
+          key: Windows-test-build
+
+      - name: Configure
+        shell: cmd
+        run: cmake -S . -B build -G Ninja -D CMAKE_BUILD_TYPE=Release -D CMAKE_C_COMPILER=cl -D CMAKE_CXX_COMPILER=cl -D VCPKG_TARGET_TRIPLET=x64-windows-static -D CMAKE_TOOLCHAIN_FILE=${{ runner.temp }}\vcpkg\scripts\buildsystems\vcpkg.cmake -D CMAKE_C_COMPILER_LAUNCHER=ccache -D CMAKE_CXX_COMPILER_LAUNCHER=ccache -D WARNINGS_AS_ERRORS_FOR_COOLLAB=OFF
+
+      - name: Build
+        run: cmake --build build --config Release --target Coollab
+
+      - name: Zip
+        shell: pwsh
+        run: Compress-Archive -Path ${{github.workspace}}\bin\Release\* -DestinationPath ${{github.workspace}}\Coollab-Windows-test.zip
+
+      - name: Publish pre-release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: test-build
+          name: Coollab test build (Russian UI)
+          prerelease: true
+          target_commitish: ${{ github.sha }}
+          body: "Automatic Windows build of branch ${{ github.ref_name }} (${{ github.sha }}). Download Coollab-Windows-test.zip, extract it and run Coollab.exe."
+          files: Coollab-Windows-test.zip
