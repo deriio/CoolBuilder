@@ -753,9 +753,12 @@ auto same_kind(PrimitiveType a, PrimitiveType b) -> bool
            || (is_greyscale_type(a) && is_greyscale_type(b));
 }
 
+/// Must match what gen_implicit_conversion() is able to do
 auto convertible(PrimitiveType from, PrimitiveType to) -> bool
 {
-    return from == to || can_convert(from, to);
+    return from == to
+           || can_convert(from, to)
+           || (is_color_or_greyscale_type(from) && is_color_or_greyscale_type(to)); // Color conversions (generated/implicit_color_conversions.inl)
 }
 
 /// What a pin of a node will accept being plugged into it.
