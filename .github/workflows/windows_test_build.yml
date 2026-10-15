@@ -1,6 +1,6 @@
 name: Windows test build
 
-# Builds Coollab for Windows from the development branch and publishes it as a pre-release named "test-build",
+# Builds CoolBuilder for Windows from the development branch and publishes it as a pre-release named "test-build",
 # so that it can be downloaded and tried without compiling anything.
 on:
   push:
@@ -44,14 +44,14 @@ jobs:
 
       - name: Configure
         shell: cmd
-        run: cmake -S . -B build -G Ninja -D CMAKE_BUILD_TYPE=Release -D CMAKE_C_COMPILER=cl -D CMAKE_CXX_COMPILER=cl -D VCPKG_TARGET_TRIPLET=x64-windows-static -D CMAKE_TOOLCHAIN_FILE=${{ runner.temp }}\vcpkg\scripts\buildsystems\vcpkg.cmake -D CMAKE_C_COMPILER_LAUNCHER=ccache -D CMAKE_CXX_COMPILER_LAUNCHER=ccache -D WARNINGS_AS_ERRORS_FOR_COOLLAB=OFF -D "COOL_APP_NAME=Coollab RU"
+        run: cmake -S . -B build -G Ninja -D CMAKE_BUILD_TYPE=Release -D CMAKE_C_COMPILER=cl -D CMAKE_CXX_COMPILER=cl -D VCPKG_TARGET_TRIPLET=x64-windows-static -D CMAKE_TOOLCHAIN_FILE=${{ runner.temp }}\vcpkg\scripts\buildsystems\vcpkg.cmake -D CMAKE_C_COMPILER_LAUNCHER=ccache -D CMAKE_CXX_COMPILER_LAUNCHER=ccache -D WARNINGS_AS_ERRORS_FOR_COOLLAB=OFF
 
       - name: Build
         run: cmake --build build --config Release --target Coollab
 
       - name: Zip
         shell: pwsh
-        run: Compress-Archive -Path ${{github.workspace}}\bin\Release\* -DestinationPath ${{github.workspace}}\Coollab-Windows-test.zip
+        run: Compress-Archive -Path ${{github.workspace}}\bin\Release\* -DestinationPath ${{github.workspace}}\CoolBuilder-Windows.zip
 
       - name: Remove the previous test build # Otherwise the tag keeps pointing at the first build and the release shows its old date
         shell: bash
@@ -63,8 +63,8 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: test-build
-          name: Coollab test build (Russian UI)
+          name: CoolBuilder (test build)
           prerelease: true
           target_commitish: ${{ github.sha }}
-          body: "Automatic Windows build of branch ${{ github.ref_name }} (${{ github.sha }}). Download Coollab-Windows-test.zip, extract it and run Coollab.exe."
-          files: Coollab-Windows-test.zip
+          body: "Automatic Windows build of branch ${{ github.ref_name }} (${{ github.sha }}). Download CoolBuilder-Windows.zip, extract it and run CoolBuilder.exe."
+          files: CoolBuilder-Windows.zip

@@ -10,7 +10,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE Coollab-Properties)
 target_compile_features(Coollab-Properties INTERFACE cxx_std_20)
 
 # Set the folder where the executable is created
-set_target_properties(${PROJECT_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin/${CMAKE_BUILD_TYPE})
+set_target_properties(${PROJECT_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin/${CMAKE_BUILD_TYPE} OUTPUT_NAME CoolBuilder)
 
 # Set warning level
 if(MSVC)
@@ -40,7 +40,7 @@ endif()
 # set(COOL_USE_VULKAN 110)
 set(COOL_USE_OPENGL $<IF:$<PLATFORM_ID:Darwin>,410,430>) # Must be >= 330 for ImGui to work properly # We use 410 when building on Mac because it doesn't support higher versions of OpenGL
 set(COOL_USE_MACOS_BUNDLE ON)
-set(COOL_APP_NAME "Coollab" CACHE STRING "Name of the app, also used as the name of the user-data folder")
+set(COOL_APP_NAME "CoolBuilder" CACHE STRING "Name of the app, also used as the name of the user-data folder")
 add_subdirectory(Cool)
 target_link_libraries(Coollab-Properties INTERFACE Cool::Core)
 cool_setup(${PROJECT_NAME})

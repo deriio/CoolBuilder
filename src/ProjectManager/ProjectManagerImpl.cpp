@@ -43,7 +43,7 @@ auto ProjectManagerImpl::has_registered_project_to_the_launcher() const -> bool
 static auto window_title(std::filesystem::path const& path) -> std::string
 {
     return fmt::format(
-        "Coollab {} [{}]",
+        "CoolBuilder {} [{}]",
         Cool::app_version(),
         Cool::File::weakly_canonical(path)
     );
