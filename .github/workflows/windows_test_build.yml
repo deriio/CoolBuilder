@@ -53,6 +53,12 @@ jobs:
         shell: pwsh
         run: Compress-Archive -Path ${{github.workspace}}\bin\Release\* -DestinationPath ${{github.workspace}}\Coollab-Windows-test.zip
 
+      - name: Remove the previous test build # Otherwise the tag keeps pointing at the first build and the release shows its old date
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release delete test-build --cleanup-tag --yes --repo ${{ github.repository }} || true
+
       - name: Publish pre-release
         uses: softprops/action-gh-release@v2
         with:
